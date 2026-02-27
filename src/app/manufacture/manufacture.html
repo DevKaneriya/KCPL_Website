@@ -1,0 +1,31 @@
+<div class="manufacture">
+  <div #revealH1 class="mobile-txt">
+    <ng-container *ngFor="let word of letters; let i = index">
+      <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+        [class.blue]="i < revealedCount && word.isBlue">
+        {{ word.word }}
+      </span>
+    </ng-container>
+  </div>
+
+  <div class="content-header">
+    <img class="image" #imageRef src="assets/images/Home/manufacture.png" alt="Manufacture" />
+  </div>
+  
+  <div class="content-body">
+    <div #revealH1 class="txt">
+
+      <ng-container *ngFor="let word of letters; let i = index">
+        <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+          [class.blue]="i < revealedCount && word.isBlue">
+          {{ word.word }}
+        </span>
+      </ng-container>
+
+    </div>
+    <div class="smalltxt">
+      with advanced manufacturing, rigorous qa protocols and in-house r&d, we bring cutting-edge heat exchangers to global and industrial leaders
+    </div>
+    <a href="/industrial/manufacturing" class="link">Learn how we make this happen</a>
+  </div>
+</div>

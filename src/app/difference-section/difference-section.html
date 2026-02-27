@@ -1,0 +1,35 @@
+<div class="wrapper">
+    <div class="header">
+        What Makes Us Different
+    </div>
+    <div class="main">
+
+        <div class="Radiator" [hidden]="currentSection !== 'radiator'">
+            <div class="desktop">
+                <img src="assets/images/Home/D-radiator.png">
+            </div>
+            <div class="mobile">
+                <img src="assets/images/Home/D-radiator.png">
+            </div>
+        </div>
+
+        <div class="condenser" [hidden]="currentSection !== 'condenser'">
+            <div class="desktop">
+                <img src="assets/images/Home/D-condenser.png">
+            </div>
+            <div class="mobile">
+                <img src="assets/images/Home/D-condenser.png">
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="footer">
+        <img (click)="switchSection('prev')" src="assets/images/Home/Arrow-left.png">
+
+        <div class="name">{{ currentSection === 'radiator' ? 'Radiators' : 'Condensers' }}</div>
+
+        <img (click)="switchSection('next')" src="assets/images/Home/Arrow-right.png">
+    </div>
+</div>

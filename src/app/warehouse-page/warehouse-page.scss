@@ -1,0 +1,46 @@
+/* main.component.css */
+.main {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+}
+
+.bg-color {
+  background-color: rgba(0, 0, 0, 0.43);
+  height: 100vh;
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+
+.header {
+  color: white;
+  font-size: var(--header);
+  font-weight: var(--header-weight);
+}
+
+.sub-header {
+  color: white;
+  font-size: var(--sub-header);
+  font-weight: var(--content-weight);
+  width: 45%;
+}
+
+@media screen and (max-width: 576px) {
+  .bg-color {
+    height: 70vh;
+    gap: 30px;
+  }
+
+  .header {
+    width: 100%;
+  }
+
+  .sub-header {
+    font-size: 20px;
+    width: 100%;
+  }
+}

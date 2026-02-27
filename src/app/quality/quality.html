@@ -1,0 +1,75 @@
+<div class="main">
+  <div #revealH1 class="heading">
+    <ng-container *ngFor="let word of letters; let i = index">
+      <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+        [class.blue]="i < revealedCount && word.isBlue">
+        {{ word.word }}
+      </span>
+    </ng-container>
+  </div>
+  <div class="slickSlider">
+    <div class="testimonial-slick-carousel" style="max-width: 100%">
+      <div class="card_carousel cards">
+        <div class="card" id="w318">
+          <img src="assets/images/Home/card-image-1.png"/>
+          <h1>Multi-Segment Compatibility</h1>
+          <p>
+            Solutions across passenger, commercial, agricultural, and industrial vehicles.
+          </p>
+        </div>
+      </div>
+      <div class="card_carousel cards">
+        <div class="card">
+          <img src="assets/images/Home/card-image-5.png" />
+          <h1>Expert Craftsmanship</h1>
+          <p>
+            Decades of experience in building high-performance automotive heat exchangers with zero compromise.
+          </p>
+        </div>
+      </div>
+      <div class="card_carousel cards">
+        <div class="card">
+          <img src="assets/images/Home/card-image-3.png" />
+          <h1>Strict Quality Control</h1>
+          <p>
+            Our multi-point inspection system ensures every product meets international standards.
+          </p>
+        </div>
+      </div>
+      <div class="card_carousel cards">
+        <div class="card">
+          <img src="assets/images/Home/card-image-4.png" />
+          <h1>Advanced Infrastructure</h1>
+          <p>
+            Equipped with cutting-edge tools, we consistently deliver high-quality solutions at scale.
+          </p>
+        </div>
+      </div>
+      <!-- <div class="card_carousel cards">
+        <div class="card">
+          <img src="assets/images/Home/card-image-5.png" />
+          <h1>Custom Fit for Every Model</h1>
+          <p>
+            We provide flexible design options to match the cooling requirements of different vehicle platforms.
+          </p>
+        </div>
+      </div> -->
+    </div>
+    <div class="sliderArrowWrap">
+      <i id="teSlideArrowL" class="sliderArrow left">
+        <svg viewBox="0 0 24 24">
+          <path
+            d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129Z" />
+        </svg>
+      </i>
+ 
+      <i id="teSlideArrowR" class="sliderArrow right">
+        <svg viewBox="0 0 24 24" style="transform: rotate(180deg);">
+          <path
+            d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129Z" />
+        </svg>
+      </i>
+    </div>
+  </div>
+   
+</div>

@@ -1,0 +1,212 @@
+.main {
+    background-image: url("/assets/images/Home/reachout.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: fit-content;
+    width: 100%;
+    padding: 50px 80px;
+    margin-bottom: 80px;
+    border-radius: 30px;
+}
+
+.header {
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+    color: white;
+    text-transform: uppercase;
+    max-width: 570px;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+}
+
+
+
+.content {
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    color: white;
+    text-transform: capitalize;
+    max-width: 720px;
+    padding: 38px 0;
+    letter-spacing: 1px;
+    word-spacing: 1px;
+
+    p {
+        line-height: 150%;
+    }
+}
+
+.footer button {
+    border-radius: 36px;
+    padding: 14px 25px;
+    cursor: pointer;
+    border: none;
+    transition: all 0.5s ease;
+}
+
+.button {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.button p {
+    font-family: "Inter", sans-serif;
+    color: var(--blue);
+    font-size: var(--link);
+    font-weight: var(--link-weight);
+}
+
+svg {
+    stroke: "#0B6AA6";
+}
+
+.button img {
+    height: 9px;
+    width: 20px;
+}
+
+button:hover {
+    background-color: var(--blue);
+}
+
+button:hover p {
+    color: white;
+}
+
+button:hover svg path {
+    stroke: white;
+}
+
+@media screen and (max-width: 576px) {
+    .main {
+        background-image: url("/assets/images/Home/reachout.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: fit-content;
+        padding: var(--padding) !important;
+        border-radius: 20px;
+        margin-bottom: 40px;
+    }
+
+    .header {
+        font-size: var(--header) !important;
+        font-weight: var(--header-weight);
+        max-width: 330px !important;
+    }
+
+
+
+    .content {
+
+        font-size: var(--content) !important;
+        font-weight: var(--content-weight);
+        max-width: 330px !important;
+        word-spacing: 1px;
+    }
+
+    .footer button {
+        border-radius: 36px;
+        padding: 12px 25px;
+        cursor: pointer;
+        transition: all 0.5s ease;
+    }
+
+    .button {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
+
+    .button p {
+        font-family: "Inter", sans-serif;
+        color: rgba(11, 106, 166, 1);
+        font-size: var(--link) !important;
+        font-weight: 700;
+    }
+
+    svg {
+        stroke: "#0B6AA6";
+    }
+
+    .button img {
+        height: 9px;
+        width: 20px;
+    }
+
+    button:hover {
+        background-color: white;
+    }
+
+    button:hover p {
+        color: rgba(11, 106, 166, 1);
+    }
+
+    button:hover svg path {
+        stroke: rgba(11, 106, 166, 1);
+    }
+}
+
+// @media screen and (max-width: 1397px) {
+
+//     .main {
+//         padding: 44px 100px;
+//     }
+
+//     .header {
+//         font-size: 45px;
+//         width: 570px;
+//     }
+
+//     .content {
+//         font-size: 19px;
+//         width: 540px;
+//         padding: 36px 0;
+//     }
+
+//     .footer button {
+//         padding: 10px 23px;
+//     }
+
+//     .button p {
+//         font-size: 16px;
+//     }
+
+//     .button img {
+//         height: 8px;
+//         width: 18px;
+//     }
+// }
+
+
+
+// @media screen and (max-width: 1229px) {
+
+//     .main {
+//         padding: 35px 100px;
+//     }
+
+//     .header {
+//         font-size: 40px;
+//         width: 570px;
+//     }
+
+//     .content {
+//         font-size: 18px;
+//         width: 540px;
+//         padding: 30px 0;
+//     }
+
+//     .footer button {
+//         padding: 8px 19px;
+//     }
+
+//     .button p {
+//         font-size: 15px;
+//     }
+
+//     .button img {
+//         height: 7px;
+//         width: 16px;
+//     }
+// }

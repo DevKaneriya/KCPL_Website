@@ -1,0 +1,165 @@
+.div-down {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  height: max-content;
+  padding: var(--padding);
+  min-height: 35vh;
+}
+
+.down-content {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 40%;
+}
+
+.up {
+  font-size: 22px;
+  font-weight: var(--sub-header-weight);
+  color: black(109, 109, 109, 1);
+  margin-bottom: -15px;
+}
+
+.para {
+  font-size: var(--content);
+  font-weight: var(--content-weight);
+  color: rgba(109, 109, 109, 1);
+}
+
+.header {
+  font-size: var(--header);
+  font-weight: var(--header-weight);
+}
+
+.mobile-image {
+  display: none;
+}
+
+
+
+.grey {
+  color: grey;
+}
+
+.black {
+  color: black;
+}
+
+.blue {
+  color: var(--blue);
+}
+
+.div-down a {
+  font-size: var(--link);
+  font-weight: var(--link-weight);
+  text-decoration: underline;
+  color: #727272;
+  cursor: pointer;
+}
+
+.div-down a:hover {
+ color: var(--blue);
+}
+
+.down-image {
+  position: relative;
+  width: 40%;
+  align-items: center;
+}
+
+.down-image img {
+  position: absolute;
+  z-index: 999;
+  height: auto;
+  width: 90%;
+  top: -38%;
+  right: 10%;
+  max-width: 500px;
+}
+
+
+
+
+
+@media screen and (max-width: 576px) {
+
+  .div-down {
+    padding: var(--padding);
+    gap: 0;
+    min-height: 20vh;
+  }
+
+  .down-content {
+    width: 100%;
+    gap: 20px;
+  }
+
+  .up {
+    font-size: 14px;
+    font-weight: var(--content-weight);
+    color: black;
+    width: 50%;
+    margin-bottom: -10px;
+  }
+
+  .para {
+    font-weight: var(--content-weight);
+    width: 100%;
+  }
+
+  .mobile-flex {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .header {
+    font-weight: var(--header-weight);
+    width: 60%;
+  }
+
+  .div-down a {
+    font-size: var(--link);
+    font-weight: var(--link-weight);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+  .down-image {
+    position: relative;
+    width: 125px;
+    height: 125px;
+    align-items: center;
+    display: none;
+  }
+
+  .mobile-image {
+    display: block;
+    position: relative;
+    width: 125px;
+    height: 50px;
+    align-items: center;
+  }
+
+  img {
+    position: absolute;
+    z-index: 999;
+    height: 125px;
+    width: auto;
+    top: -165%;
+    right: 0%;
+  }
+}
+
+
+// @media screen and (max-width: 1229px) {
+
+//   .down-image img {
+//     height: 400px;
+//     width: auto;
+//     top: -33%;
+//     right: 10%;
+//   }
+
+// }

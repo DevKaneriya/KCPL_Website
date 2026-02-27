@@ -1,0 +1,139 @@
+.main {
+    padding: var(--padding);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.left {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.sub-header {
+    color: #5A5A5A;
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+}
+
+.header {
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+    max-width: 650px;
+}
+
+.grey {
+    color: grey;
+}
+
+.black {
+    color: black;
+}
+
+.blue {
+   color: var(--blue);
+}
+
+.content {
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    width: 80%;
+    margin-top: 10px;
+}
+
+.right {
+    width: 45%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.block {
+    padding: 20px 15px;
+    border: 1px solid #E2E2E2;
+    border-radius: 8px;
+    display: flex;
+    gap: 15px;
+    transition: all 0.4s ease-in-out;
+}
+
+.block:hover {
+    border-radius: 15px;
+}
+
+.block img {
+    height: 25px;
+    margin-top: 3px;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+.text-header {
+    font-size: var(--sub-header);
+    font-weight: var(--sub-header-weight);
+}
+
+.text-content {
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    color: #939393;
+}
+
+
+@media screen and (max-width: 576px) {
+
+    .main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .left {
+        width: 100%;
+        gap: 15px;
+    }
+
+    .content {
+        font-size: var(--content);
+        font-weight: var(--content-weight);
+        width: 100%;
+        margin-top: 0;
+    }
+
+    .right {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .block {
+        padding: 15px 15px;
+        display: flex;
+        gap: 15px;
+    }
+
+    .block img {
+        height: 20px;
+        margin-top: 1px;
+    }
+
+
+    .text-header {
+        font-size: 18px;
+        font-weight: var(--sub-header-weight);
+    }
+
+    .text-content {
+        font-size: var(--content);
+        font-weight: var(--content-weight);
+    }
+
+
+}

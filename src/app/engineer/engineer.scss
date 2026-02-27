@@ -1,0 +1,128 @@
+.content {
+    width: 100%;
+    height: fit-content;
+    padding: var(--padding);
+    background-color: var(--dark);
+    color: white;
+    border-radius: 12px;
+}
+
+.content-header {
+    font-weight: var(--header-weight);
+    font-size: var(--header);
+}
+
+.content-body {
+    max-width: 850px;
+    margin: 40px 0;
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    line-height: 136%;
+    word-spacing: 2px;
+    letter-spacing: 0.6px;
+}
+
+a {
+    display: inline-block;
+    font-size: var(--content);
+    font-weight: var(--sub-header-weight);
+    color: white;
+    text-decoration: none;
+    transition: transform 0.5s ease-in-out; 
+    transform-origin: left center;
+    will-change: transform;
+    transform: translateZ(0);
+}
+
+a:hover {
+    transform-origin: left;
+    transform: scale(1.06);
+}
+
+
+.grey {
+  color: rgba(0, 0, 0, 0.372);
+}
+
+.black {
+  color: white;
+}
+
+.blue {
+ color: var(--blue);
+}
+
+
+
+
+
+@media screen and (max-width: 576px) {
+
+    .content {
+        width: 100%;
+        height: fit-content;
+        padding: var(--padding) !important;
+        color: white;
+        border-radius: 22px;
+    }
+
+    .content-header {
+        font-size: var(--header) !important;
+        width: 100%;
+    }
+
+    .content-body {
+        width: 100% !important;
+        margin: 30px 0;
+        font-size: 16px;
+        font-weight: var(--content-weight);
+        line-height: 110%;
+    }
+
+
+    a:hover {
+        transform-origin: left;
+        transform: scale(1);
+    }
+
+}
+
+
+
+// @media screen and (max-width: 1397px) {
+//     .content {
+//         padding: 55px 90px;
+//     }
+
+//     .content-header {
+//         font-size: 46px;
+//     }
+
+//     .content-body {
+//         margin: 35px 0;
+//         font-size: 21px;
+//     }
+
+//     a {
+//         font-size: 18px;
+//     }
+// }
+
+// @media screen and (max-width: 1229px) {
+//     .content {
+//         padding: 48px 80px;
+//     }
+
+//     .content-header {
+//         font-size: 40px;
+//     }
+
+//     .content-body {
+//         margin: 30px 0;
+//         font-size: 18px;
+//     }
+
+//     a {
+//         font-size: 16px;
+//     }
+// }

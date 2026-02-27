@@ -1,0 +1,131 @@
+.flex {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgba(245, 245, 245, 1);
+    padding: var(--padding);
+    gap: 40px;
+}
+
+.left-header {
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+    max-width: 400px;
+}
+
+.grey {
+  color: grey;
+}
+
+.black {
+  color: black;
+}
+
+.blue {
+color: var(--blue);
+}
+
+
+
+.left-content {
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    padding: 20px 0;
+    max-width: 400px;
+}
+
+.content {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 50px;
+}
+
+.item-header {
+    font-size: 20px;
+    font-weight: var(--sub-header-weight);
+}
+
+.index-item {
+    padding-left: 20px;
+}
+
+.item-content {
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    padding: 15px 0;
+    max-width: 450px;
+}
+
+.item-link a {
+    color: black;
+    font-size: var(--link);
+    font-weight: var(--content-weight);
+}
+
+.item-link a:hover {
+    color: var(--blue);
+}
+
+#last {
+    padding-bottom: 0px;
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(245, 245, 245, 1);
+        padding: 40px 20px 30px;
+    }
+
+    .left-header {
+        font-size: var(--header);
+        font-weight: var(--header-weight);
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    .left-content {
+        font-size: var(--content);
+        font-weight: var(--content-weight);
+        padding: 0px 0 0px;
+        width: 100%;
+    }
+
+    .content {
+        display: flex;
+        justify-content: space-between;
+        padding-bottom: 25px;
+    }
+
+    .item-header {
+        font-size: 16px;
+        font-weight: var(--sub-header-weight);
+    }
+
+    .index-item {
+        padding-left: 20px;
+    }
+
+    .item-content {
+        font-size: var(--content);
+        font-weight: var(--content-weight);
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    .item-link a {
+        color: black;
+        font-size: var(--link);
+        font-weight: var(--sub-header-weight);
+        width: 100%;
+    }
+
+    .item-link a:hover {
+       color: var(--blue);
+    }
+
+}

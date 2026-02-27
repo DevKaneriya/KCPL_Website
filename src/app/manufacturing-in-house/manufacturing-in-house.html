@@ -1,0 +1,31 @@
+<div class="main">
+
+    <div class="image">
+        <img src="assets/images/Manufacture/in-house.png" alt="">
+    </div>
+
+    <div class="content">
+        <div #revealH1 class="header">
+            <ng-container *ngFor="let word of letters; let i = index">
+                <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                    [class.blue]="i < revealedCount && word.isBlue">
+                    {{ word.word }}
+                </span>
+            </ng-container>
+        </div>
+
+        <div class="mobile-image">
+            <img src="assets/images/Manufacture/in-house.png" alt="">
+        </div>
+
+        <div class="body">
+            <p>
+                Manufacturing infrastructure is built for precision and scalability, featuring a fully equipped press shop with hydraulic, mechanical, and servo presses ranging from 10T to 200T.
+            </p>
+            <p>
+                With in-house tool and die development, ultrasonic component washing, dedicated tube cutting facilities, and a well-stocked inventory, we ensure dimensional accuracy, contamination-free assembly, and reliable in-house production of critical components.
+            </p>
+        </div>
+    </div>
+
+</div>

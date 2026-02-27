@@ -1,0 +1,45 @@
+.header {
+    text-align: center;
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+    color: white;
+    letter-spacing: 1px;
+    background-color: rgba(255, 69, 69, 1);
+    width: 100%;
+    padding: 20px 0;
+}
+
+.main {
+    background-color: rgba(245, 245, 245, 1);
+}
+
+.radiator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radiator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.radiator img {
+    width: 80%;
+    object-fit: cover;
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+
+    .header {
+        padding: 15px 0;
+    }
+
+    .radiator img {
+        width: 90%;
+    }
+}

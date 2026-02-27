@@ -1,0 +1,35 @@
+<div class="main">
+
+    <div class="left">
+
+        <div #revealH1 class="header">
+            <ng-container *ngFor="let word of letters; let i = index">
+                <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                    [class.blue]="i < revealedCount && word.isBlue">
+                    {{ word.word }}
+                </span>
+            </ng-container>
+        </div>
+
+        <div id="mobile">
+            <video muted loop playsinline preload="auto">
+                <source src="assets/images/PDP-Radiator/work-hardest.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="content">
+            From agriculture to industrial power, KCPL radiators have proven their reliability across diverse
+            conditions. Whether it's keeping high-torque tractors cool under intense heat, boosting uptime for
+            commercial fleets, or supporting custom genset and motorsport applications, our radiators deliver
+            performance where it matters.
+        </div>
+
+    </div>
+
+    <div id="desktop">
+        <video muted loop playsinline preload="auto">
+            <source src="assets/images/PDP-Radiator/work-hardest.mp4" type="video/mp4">
+        </video>
+    </div>
+
+</div>

@@ -1,0 +1,261 @@
+.main {
+    background-color: white;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.header {
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+    width: 50%;
+}
+
+.grey {
+    color: grey;
+}
+
+.black {
+    color: black;
+}
+
+.blue {
+    color: var(--blue);
+}
+
+.middle {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.image {
+    height: fit-content;
+    width: 38%;
+    border-radius: 10px;
+    align-items: center;
+    padding: 30px 40px;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    border: 1px solid #616161;
+}
+
+.image:hover {
+    border-radius: 40px;
+}
+
+.image:hover .img-left {
+    transform: rotate(-5deg);
+}
+
+.image:hover .img-right {
+    transform: rotate(-5deg);
+}
+
+.bold {
+    font-size: var(--sub-header);
+    font-weight: var(--sub-header-weight);
+}
+
+.light {
+    color: rgba(110, 110, 110, 1);
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+.img-div {
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+}
+
+.img-left {
+    height: 259px;
+    width: 296px;
+    transition: all 0.7s ease-in-out;
+}
+
+
+
+.img-right {
+    height: 230px;
+    width: 306px;
+    transition: all 0.7s ease-in-out;
+}
+
+.arrow {
+    cursor: pointer;
+    width: 32px;
+    height: 19px;
+    float: right;
+    transition: all 0.7s ease-in-out;
+}
+
+.image:hover .arrow {
+    transform: scale(1.3);
+}
+
+.footer {
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    align-items: center;
+    background-color: black;
+    border-radius: 50px;
+    padding: 0 36px;
+    cursor: pointer;
+    transition: all 0.7s ease-in-out;
+    padding: 10px 30px;
+}
+
+
+
+.footer:hover svg {
+    width: 20px;
+}
+
+.text {
+    color: white;
+    font-size: var(--link);
+    font-weight: var(--link-weight);
+}
+
+.button button {
+    font-size: var(--link);
+    font-weight: 600;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    background-color: white;
+    border: transparent;
+    border-radius: 50px;
+    cursor: pointer;
+    padding: 9px 20px;
+}
+
+button span {
+    color: black;
+    transition: all 0.7s ease-in-out;
+}
+
+button svg {
+    fill: black;
+    transition: all 0.7s ease-in-out;
+}
+
+.button button:hover {
+    background-color: white;
+}
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+
+    .main {
+        padding: var(--padding) !important;
+        gap: 30px;
+    }
+
+    .header {
+        font-size: var(--header) !important;
+        width: 90%;
+    }
+
+    .middle {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .image {
+        height: fit-content;
+        width: 100%;
+        border-radius: 20px;
+        background-color: white;
+        align-items: center;
+        padding: 20px 20px !important;
+    }
+
+    .image:hover {
+        border-radius: 30px;
+    }
+
+    .bold {
+        font-size: var(--sub-header) !important;
+    }
+
+    .light {
+        color: rgba(110, 110, 110, 1);
+        font-size: 12.5px !important;
+    }
+
+    .img-div {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+    }
+
+    .img-left {
+        height: 259px;
+        width: 256px;
+    }
+
+    .img-right {
+        height: 230px;
+        width: 290px;
+    }
+
+    .arrow {
+        cursor: pointer;
+        width: 27px;
+        height: 19px;
+        float: right;
+        transition: transform 0.2s ease;
+    }
+
+    .arrow:hover {
+        transform: scale(1.1);
+        float: right;
+    }
+
+    .footer {
+        height: 55px !important;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: black;
+        border-radius: 50px;
+        padding: 0 10px 0 20px !important;
+    }
+
+    .text {
+        font-size: 11.5px !important;
+    }
+
+    .button button {
+        height: max-content;
+        font-size: 11px !important;
+        font-weight: 600;
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        padding: 6px 12px !important;
+    }
+
+    button svg {
+        width: 20px;
+    }
+
+}

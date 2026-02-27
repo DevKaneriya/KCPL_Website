@@ -1,0 +1,51 @@
+<div class="heading">
+  <div class="header">Types of Condensers</div>
+
+  <div class="container1 sliderArrowWrap">
+    <i id="SliderArrowL" class="sliderArrow left">
+      <svg viewBox="0 0 24 24">
+        <path
+          d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129Z" />
+      </svg>
+    </i>
+
+    <i id="SliderArrowR" class="sliderArrow right">
+      <svg viewBox="0 0 24 24" style="transform: rotate(180deg);">
+        <path
+          d="M14.2893 5.70708C13.8988 5.31655 13.2657 5.31655 12.8751 5.70708L7.98768 10.5993C7.20729 11.3805 7.2076 12.6463 7.98837 13.427L12.8787 18.3174C13.2693 18.7079 13.9024 18.7079 14.293 18.3174C14.6835 17.9269 14.6835 17.2937 14.293 16.9032L10.1073 12.7175C9.71678 12.327 9.71678 11.6939 10.1073 11.3033L14.2893 7.12129Z" />
+      </svg>
+    </i>
+  </div>
+</div>
+
+<div class="Slider">
+  <div class="skeleton-wrapper" *ngIf="loading">
+    <div class="skeleton-card sl_effect" *ngFor="let _ of [].constructor(skeletonCount)"></div>
+  </div>
+  <swiper-container #swiperEl *ngIf="!loading && carouselReady" slides-per-view="3" space-between="25" loop="true"
+    speed="600" autoplay="true" navigation="true" navigation-prev-el="#SliderArrowL" navigation-next-el="#SliderArrowR"
+    navigation="true" breakpoints='{
+      "0": { "slidesPerView": 1 },
+      "320": { "slidesPerView": 1 },
+      "375": { "slidesPerView": 1 },
+      "425": { "slidesPerView": 1 },
+      "768": { "slidesPerView": 2 },
+      "1024": { "slidesPerView": 3 }
+    }'>
+
+    <swiper-slide *ngFor="let item of condenserProducts; trackBy: trackById" class="cards">
+
+      <div class="card">
+        <img [src]="item.image_url" [alt]="item.title" />
+
+        <div class="card-content">
+          <h1>{{ item.title }}</h1>
+          <p>{{ item.description }}</p>
+        </div>
+      </div>
+
+    </swiper-slide>
+
+  </swiper-container>
+
+</div>

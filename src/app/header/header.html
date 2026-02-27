@@ -1,0 +1,105 @@
+<div class="header" [ngClass]="{ 'transparent': isTransparent, 'solid': !isTransparent }">
+  <a routerLink="/">
+    <img class="logo" [src]="isTransparent
+      ? 'assets/images/Home/logo-white.png'
+      : 'assets/images/Home/logo.png'" alt="Logo" />
+  </a>
+
+
+  <!-- Mobile Menu Icon -->
+  <button class="menu-btn" (click)="toggleMenu()"
+    [ngClass]="{ 'white-icon': isTransparent, 'black-icon': !isTransparent }">
+    ☰
+  </button>
+
+  <!-- Desktop Nav -->
+  <ul class="nav">
+    <li><a class="desktop" routerLink="/about" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">About</a></li>
+
+    <div class="btn-group">
+      <a type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
+        (click)="toggleIndustrialDropdown(); $event.preventDefault()">
+        Industrial
+        <img class="dropdown-image" [ngClass]="{ 'rotate': isIndustrialOpen }" *ngIf="!isTransparent"
+          src="assets/images/Home/industrial-dropdown-black.svg" alt="">
+        <img class="dropdown-image" [ngClass]="{ 'rotate': isIndustrialOpen }" *ngIf="isTransparent"
+          src="assets/images/Home/industrial-dropdown-white.svg" alt="">
+      </a>
+      <ul class="dropdown-menu dropdown-menu-end">
+        <li>
+          <a class="dropdown-item first" [ngClass]="{ 'active1': router.url.includes('/industrial/quality-control') }"
+            href="/industrial/quality-control">Quality Control</a>
+        </li>
+        <hr>
+        <li>
+          <a class="dropdown-item" [ngClass]="{ 'active': router.url.includes('/industrial/warehouse') }"
+            href="/industrial/warehouse">Warehouse</a>
+        </li>
+        <hr>
+        <li>
+          <a class="dropdown-item last" [ngClass]="{ 'active2': router.url.includes('/industrial/manufacturing') }"
+            href="/industrial/manufacturing">Manufacturing</a>
+        </li>
+      </ul>
+    </div>
+
+    <li><a class="desktop" routerLink="/products" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">Products</a></li>
+
+    <li><a class="desktop" routerLink="/career" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">Career</a>
+    </li>
+
+    <li><a class="desktop" routerLink="/contact" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">Contact Us</a>
+    </li>
+
+    <li><a class="desktop" routerLink="/gallery" routerLinkActive="active-link"
+        [routerLinkActiveOptions]="{ exact: true }">Gallery</a>
+    </li>
+  </ul>
+</div>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" [ngClass]="{ 'open': isMenuOpen }">
+  <a routerLink="/" (click)="closeMenu()">
+    <img class="mobile-logo" src="assets/images/Home/logo.png" />
+  </a>
+  <button class="close-btn" (click)="closeMenu()">×</button>
+  <nav>
+    <a routerLink="/about" (click)="closeMenu()">About</a>
+
+
+    <div class="nav-item dropdown-toggle-wrapper" (click)="toggleIndustrialDropdown(); $event.preventDefault()">
+      <a class="nav-link">Industrial</a>
+
+      <img class="arrow" [ngClass]="{ 'rotate': isIndustrialOpen }" src="assets/images/Home/industrial.svg" alt="">
+
+    </div>
+
+    <div class="dropdown-content" [ngClass]="{ 'open': isIndustrialOpen }">
+      <a class="nav-link" href="/industrial/quality-control"
+        [ngClass]="{ 'active': router.url.includes('/industrial/quality-control') }">
+        Quality Control
+      </a>
+      <a class="nav-link" href="/industrial/warehouse"
+        [ngClass]="{ 'active': router.url.includes('/industrial/warehouse') }">
+        Warehouse
+      </a>
+      <a class="nav-link" href="/industrial/manufacturing"
+        [ngClass]="{ 'active': router.url.includes('/industrial/manufacturing') }">
+        Manufacturing
+      </a>
+    </div>
+
+
+
+    <a routerLink="/products" (click)="closeMenu()">Products</a>
+    <a routerLink="/career" (click)="closeMenu()">Career</a>
+    <a routerLink="/contact" (click)="closeMenu()">Contact Us</a>
+    <a routerLink="/gallery" (click)="closeMenu()">Gallery</a>
+
+
+  </nav>
+</div>

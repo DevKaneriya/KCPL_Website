@@ -1,0 +1,57 @@
+<div class="flex">
+    <div class="left">
+        <div #revealH1 class="left-header">
+            <ng-container *ngFor="let word of letters; let i = index">
+                <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                    [class.blue]="i < revealedCount && word.isBlue">
+                    {{ word.word }}
+                </span>
+            </ng-container>
+        </div>
+        <div class="left-content">
+            We design and manufacture high-performance automotive cooling components through precision engineering and fully in-house processes.
+        </div>
+    </div>
+    <div class="right">
+
+        <div class="content">
+            <div class="item-header">01</div>
+            <div class="index-item">
+                <div class="item-header">We Manufacture Heat Exchangers</div>
+                <div class="item-content">
+                    Our product range includes radiators and condensers - designed to meet the demands of OEMs and global markets.
+                </div>
+                <div class="item-link">
+                    <a href="/products">View Our Products</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="item-header">02</div>
+            <div class="index-item">
+                <div class="item-header">We Operate With Complete In-House Control</div>
+                <div class="item-content">
+                    From fin making to brazing and ultrasonic cleaning, every stage of production is handled internally to ensure consistency, efficiency, and scale.
+                </div>
+                <div class="item-link">
+                    <a href="/industrial/manufacturing">See Our Manufacturing Setup</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content" id='last'>
+            <div class="item-header">03</div>
+            <div class="index-item">
+                <div class="item-header">We Ensure Strict Quality At Every Step</div>
+                <div class="item-content">
+                    Each product undergoes leak tests, pressure validation, and performance checks before it leaves our facility—ensuring reliable field performance.
+                </div>
+                <div class="item-link">
+                    <a href="/industrial/quality-control">Explore Our Quality Process</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,149 @@
+<div class="main">
+
+    <div class="header">
+        Get in Touch
+    </div>
+
+    <div class="flex">
+
+        <div class="left">
+
+            <hr>
+            <div class="left-content">
+                Connect with us today and unlock your business's potential.
+            </div>
+            <hr>
+            <div class="table">
+
+                <div class="field-flex">
+                    <div class="field">Phone</div>
+                    <div class="field-content width">
+                        <a href="tel:+9198251 30293"
+                            style="color: black; width: max-content;text-decoration: none; padding: 0;">+91-98251
+                            30293</a>
+                    </div>
+                </div>
+
+                <div class="field-flex">
+                    <div class="field">Email</div>
+                    <div class="field-content width">
+                        <a href="mailto:customercare@kcplauto.com"
+                            style="color: black; width: max-content;text-decoration: none; padding: 0">
+                            customercare&#64;kcplauto.com
+                        </a>
+                    </div>
+                </div>
+
+                <div class="field-flex">
+                    <div class="field">Socials</div>
+                    <div class="field-content width">
+                        <div class="icons">
+                            <a target="_blank" href="https://in.linkedin.com/company/kcpl-india">
+                                <img src="assets/images/Home/In-black.svg" alt="">
+                            </a>
+                            <a target="_blank" href="https://www.facebook.com/kcplradiator">
+                                <img src="assets/images/Home/F-black.svg" alt="">
+                            </a>
+                            <a target="_blank" href="https://www.youtube.com/@kcplindia7922">
+                                <img src="assets/images/Home/Y-black.svg" alt="">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-flex">
+                    <div class="field">Address</div>
+                    <a href="https://maps.app.goo.gl/hDKFNZyX8GiCcUPV6" target="_blank" class="field-content width">
+                        Karnavati Car Air Conditioners Pvt Ltd.
+                        Plot no.501/4, Near ethos co, Tajpur road, Changodar, Ahmedabad: 382213</a>
+                </div>
+
+                <hr>
+
+                <div class="field-flex">
+                    <div class="field">Jobs</div>
+                    <div class="field-content job width">
+                        <a class="job-a" onclick="window.location.href='/career';">View Current Openings</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="right">
+
+            <div class="right-content">
+                Let's start something amazing together
+            </div>
+
+            <form class="form" [formGroup]="contactForm" (ngSubmit)="onsubmitForm()">
+
+                <input type="text" placeholder="First Name" formControlName="first_name" />
+                <div class="error" *ngIf="isInvalid('first_name')">
+                    <small>
+                        {{
+                        contactForm.get('first_name')?.errors?.['required'] ? 'First name is required.' :
+                        contactForm.get('first_name')?.errors?.['minlength'] ? 'Minimum 2 characters required.' :
+                        contactForm.get('first_name')?.errors?.['pattern'] ? 'Only alphabets allowed.' : ''
+                        }}
+                    </small>
+                </div>
+
+                <input type="text" placeholder="Last Name" formControlName="last_name" />
+                <div class="error" *ngIf="isInvalid('last_name')">
+                    <small>
+                        {{
+                        contactForm.get('last_name')?.errors?.['required'] ? 'Last name is required.' :
+                        contactForm.get('last_name')?.errors?.['minlength'] ? 'Minimum 2 characters required.' :
+                        contactForm.get('last_name')?.errors?.['pattern'] ? 'Only alphabets allowed.' : ''
+                        }}
+                    </small>
+                </div>
+
+                <input type="email" placeholder="Email" formControlName="email" />
+                <div class="error" *ngIf="isInvalid('email')">
+                    <small>
+                        {{
+                        contactForm.get('email')?.errors?.['required'] ? 'Email is required.' :
+                        contactForm.get('email')?.errors?.['email'] ? 'Enter a valid email.' : ''
+                        }}
+                    </small>
+                </div>
+
+                <input type="tel" maxlength="10" placeholder="Phone" formControlName="phone" />
+                <div class="error" *ngIf="isInvalid('phone')">
+                    <small>
+                        {{
+                        contactForm.get('phone')?.errors?.['required'] ? 'Phone number is required.' :
+                        contactForm.get('phone')?.errors?.['pattern'] ? 'Enter a valid phone number.' : ''
+                        }}
+                    </small>
+                </div>
+
+                <input type="text" placeholder="Website" formControlName="website" />
+
+                <input type="text" placeholder="Company Name" formControlName="company_name" />
+
+
+                <button class="button" type="submit" [disabled]="isSubmitting">
+                    Submit enquiry →
+                </button>
+
+            </form>
+
+            @if (successMessage) {
+            <div class="success-message">
+                {{successMessage}}
+            </div>
+            }
+            @if (errorMessage) {
+            <div class="error-toast">
+                {{ errorMessage }}
+            </div>
+            }
+        </div>
+    </div>
+</div>
+<hr id="hr" style="border: 1px solid ; margin: 0">
+<app-news></app-news>
+<app-footer></app-footer>

@@ -1,0 +1,142 @@
+.main {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #FFFFFF;
+    padding-left: 100px;
+    gap: 80px;
+}
+
+.about-title {
+    font-size: var(--contact);
+    font-weight: var(--link-weight);
+    color: rgba(90, 90, 90, 1);
+    margin-bottom: 25px;
+}
+
+.about-header {
+    max-width: 530px;
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+    line-height: 1.2;
+}
+
+.highlight {
+    color: var(--blue);
+}
+
+.images {
+    max-width: 550px;
+    position: relative;
+}
+
+.img1 {
+    width: 100%;
+    height: 90vh;
+    object-fit: cover;
+    border-radius: 12px 0 0 12px;
+}
+
+.img2 {
+    max-width: 22vw;
+    height: 17vw;
+    position: absolute;
+    top: 30%;
+    left: -27%;
+    object-fit: cover;
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+    .main {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        justify-content: center;
+        padding: var(--padding) !important;
+        gap: 0px;
+    }
+
+    .about-title {
+        font-weight: var(--link-weight);
+        color: rgba(90, 90, 90, 1);
+        margin: 25px 0 15px;
+    }
+
+    .about-header {
+        max-width: 500px;
+        width: 100% !important;
+        font-weight: var(--header-weight);
+        line-height: 1.05;
+    }
+
+    .highlight {
+        color: var(--blue);
+    }
+
+    .images {
+        width: 100% !important;
+        position: relative;
+        object-fit: cover;
+    }
+
+    .img1 {
+        width: 100%;
+        height: auto;
+        min-height: 250px;
+        object-fit: cover;
+        border-radius: 12px !important;
+    }
+
+    .img2 {
+        display: none;
+    }
+
+}
+
+
+
+@media screen and (max-width: 800px) {
+
+    .main {
+        height: max-content !important;
+    }
+
+        .img2 {
+            display: none;
+        }
+    }
+
+
+    @media screen and (max-width: 1300px) {
+
+        .main {
+            padding-left: 60px;
+            height: 40vw;
+        }
+
+        .about-header {
+            width: 300px;
+        }
+
+        .images {
+            width: 390px;
+            position: relative;
+        }
+
+        .img1 {
+            width: 100%;
+            height: 40vw;
+            object-fit: cover;
+            border-radius: 12px 0 0 12px;
+        }
+
+        // .img2 {
+        //     max-width: 300px;
+        //     height: 240px;
+        // }
+
+    }

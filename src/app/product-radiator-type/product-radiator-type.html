@@ -1,0 +1,42 @@
+<div class="main">
+    <div class="header">
+        Radiator Types
+    </div>
+    <div class="padding">
+        <div class="cards">
+
+            <ng-container *ngIf="isLoading">
+                <div class="skeleton-wrapper">
+                    <div class="skeleton-card sl_effect"></div>
+                    <div class="skeleton-card sl_effect"></div>
+                    <div class="skeleton-card sl_effect"></div>
+                </div>
+            </ng-container>
+
+            <ng-container *ngIf="!isLoading">
+                <div class="card-item" *ngFor="let product of radiatorProducts"
+                    onclick="window.location.href='/product/radiator';">
+                    <div class="card-img">
+                        <img referrerpolicy="no-referrer" [src]="product.image_url" [alt]="product.title" />
+                    </div>
+
+                    <div class="card-content">
+                        <div>
+                            <div class="card-header">{{ product.title }}</div>
+
+                            <div class="card-text">
+                                {{ product.short_description }}
+                            </div>
+                        </div>
+
+                        <div class="card-footer">
+                            <img src="assets/images/Products/products-arrow.svg" alt=""
+                                onclick="window.location.href='/product/radiator';" />
+                        </div>
+                    </div>
+                </div>
+            </ng-container>
+
+        </div>
+    </div>
+</div>

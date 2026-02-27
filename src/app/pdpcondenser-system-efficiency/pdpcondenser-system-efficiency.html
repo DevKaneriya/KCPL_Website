@@ -1,0 +1,77 @@
+<div class="main">
+
+    <div class="left">
+
+        <div class="sub-header">
+            In Focus
+        </div>
+        
+        <div #revealH1 class="header">
+            <ng-container *ngFor="let word of letters; let i = index">
+                <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                    [class.blue]="i < revealedCount && word.isBlue">
+                    {{ word.word }}
+                </span>
+            </ng-container>
+        </div>
+
+        <div class="content">
+            Engineered for optimal airflow and rapid heat transfer, KCPL condensers reduce compressor load, improve
+            cooling speed, and enhance overall system performance—ensuring long-term efficiency and comfort.
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <div class="block">
+            <div class="image">
+                <img src="assets/images/PDP-Condenser/system-efficiency-1.svg" alt="">
+            </div>
+            <div class="text">
+
+                <div class="text-header">
+                    Faster Cooling Cycles
+                </div>
+                <div class="text-content">
+                    Reduces interior cooling time for superior comfort
+                </div>
+
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="image">
+                <img src="assets/images/PDP-Condenser/system-efficiency-2.svg" alt="">
+            </div>
+            <div class="text">
+
+                <div class="text-header">
+                    Zero-Compromise Fitment
+                </div>
+                <div class="text-content">
+                    OE-compatible dimensions for quick installation
+                </div>
+
+            </div>
+        </div>
+
+        <div class="block">
+            <div class="image">
+                <img src="assets/images/PDP-Condenser/system-efficiency-3.svg" alt="">
+            </div>
+            <div class="text">
+
+                <div class="text-header">
+                    Corrosion Protection
+                </div>
+                <div class="text-content">
+                    Extends condenser life in high-humidity or coastal climates
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>

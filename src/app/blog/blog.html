@@ -1,0 +1,43 @@
+<div class="main">
+    <div #revealH1 class="header">
+        Blogs & Articles
+    </div>
+
+    <div class="cards" *ngIf="!loading">
+
+        <div class="card" (click)="goToBlog(blog.slug)" *ngFor="let blog of blogs" >
+
+            <img referrerpolicy="no-referrer" [src]="blog.cover_image" alt="">
+
+            <div class="padding">
+                <div class="card-head">
+                    <p>{{ blog.title }}</p>
+                </div>
+
+                <div class="card-content">
+                    <p>{{ blog.excerpt }}</p>
+                </div>
+
+                <div class="card-foot">
+                    <a (click)="goToBlog(blog.slug)">Learn more</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div *ngIf="loading">
+        <div class="skeleton-wrapper">
+            <div class="skeleton-card sl_effect"></div>
+            <div class="skeleton-card sl_effect"></div>
+            <div class="skeleton-card sl_effect"></div>
+        </div>
+    </div>
+
+</div>
+
+
+ 
+<app-footer></app-footer>

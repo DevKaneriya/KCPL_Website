@@ -1,0 +1,39 @@
+<div class="main">
+
+    <div class="video">
+        <video id="desktop-video"  muted loop playsinline preload="auto">
+            <source src="assets/images/Warehouse/flexible-capacity.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div class="right">
+
+        <div #revealH1 class="header">
+            <ng-container *ngFor="let word of letters; let i = index">
+                <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                    [class.blue]="i < revealedCount && word.isBlue">
+                    {{ word.word }}
+                </span>
+            </ng-container>
+        </div>
+
+        <div class="mobile-video">
+            <video id="mobile"  muted loop playsinline preload="auto">
+                <source src="assets/images/Warehouse/flexible-capacity.mp4" type="video/mp4">
+            </video>
+        </div>
+
+        <div class="content">
+
+            <p>At KCPL, our warehousing is engineered for dynamic scalability—capable of adapting to seasonal surges and
+                bulk requirements while upholding unmatched precision in stock management and order accuracy.
+                Reliability meets flexibility at every stage of the supply chain.</p>
+
+            <p>From real-time inventory tracking to seamless coordination with production and dispatch teams, our system
+                ensures every unit is accounted for—no matter the scale of demand.</p>
+
+        </div>
+
+    </div>
+
+</div>

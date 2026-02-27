@@ -1,0 +1,253 @@
+.main {
+    padding: 80px 15px;
+}
+
+.header {
+    padding: 0 85px;
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+}
+
+.grey {
+    color: grey;
+}
+
+.black {
+    color: black;
+}
+
+.blue {
+   color: var(--blue);
+}
+
+.cards {
+    display: flex;
+    justify-content: left;
+    padding: 50px 80px 0;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    border: 2px solid #DDDDDD;
+    border-radius: 15px;
+    width: 30%;
+    min-width: 340px;
+    min-height: 500px;
+    height: max-content;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.card img {
+    height: 260px;
+    width: 100%;
+    border-radius: 12px 12px 0 0;
+    object-fit: cover;
+}
+
+.padding {
+    padding: 30px 20px;
+}
+
+.card-head {
+    font-size: 22px;
+    font-weight: var(--sub-header-weight);
+}
+
+.card-content {
+    font-size: var(--link);
+    font-weight: var(--content-weight);
+    margin: 25px 0;
+    height: 70px;
+
+    p {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
+
+.card-foot a {
+    font-size: var(--link);
+   color: var(--blue);
+    text-decoration: underline;
+    transition: 0.4s ease;
+    cursor: pointer;
+}
+
+.card-foot a:hover {
+    color: black;
+}
+
+
+
+.skeleton-wrapper {
+    display: flex;
+    justify-content: left;
+    padding: 50px 80px 0;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.skeleton-card {
+    border-radius: 15px;
+    width: 30%;
+    min-width: 340px;
+    height: 500px;
+    overflow: hidden;
+}
+
+/* Skeleton loading effect */
+.sl_effect {
+    background: linear-gradient(90deg,
+            #f0f0f0 25%,
+            #e0e0e0 50%,
+            #f0f0f0 75%);
+    background-size: 200% 100%;
+    animation: sl_loading 2.5s linear infinite;
+}
+
+@keyframes sl_loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 1240px) {
+    .card {
+        min-height: 490px;
+    }
+}
+
+@media screen and (max-width: 576px) {
+
+    .main {
+        padding: var(--padding) !important;
+    }
+
+    .header {
+        padding: 0px 0px 20px;
+        font-size: var(--header) !important;
+    }
+
+    .cards {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0px;
+    }
+
+    .card {
+        width: 100%;
+        min-width: 300px;
+        min-height: max-content;
+    }
+
+    .card img {
+        height: 195px;
+        width: 100%;
+    }
+
+    .card-head {
+        font-size: 17px !important;
+    }
+
+    .card-content {
+        font-size: var(--link) !important;
+        margin: 15px 0;
+        height: max-content;
+
+    }
+
+    .card-foot a {
+        font-size: var(--link);
+       color: var(--blue);
+        text-decoration: underline;
+        transition: 0.4s ease;
+        cursor: pointer;
+    }
+
+    .card-foot a:hover {
+       color: var(--blue);
+    }
+
+    .skeleton-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 25px;
+        padding: 0px;
+    }
+
+    .skeleton-card {
+        width: 100%;
+        min-width: 300px;
+        height: 400px;
+    }
+
+}
+
+
+@media screen and (max-width: 1397px) {
+    .main {
+        padding: 42px 33px;
+    }
+
+    .header {
+        /* margin: 0 88px; */
+        font-size: 46px;
+    }
+
+    .padding {
+        padding: 26px;
+    }
+
+    .card-head {
+        font-size: 20px;
+    }
+
+    .card-content {
+        font-size: 15px;
+    }
+
+    .card-foot a {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 1229px) {
+    .main {
+        padding: 35px 27px;
+    }
+
+    .header {
+        /* margin: 0 94px; */
+        font-size: 40px;
+    }
+
+    .padding {
+        padding: 20px;
+    }
+
+    .card-head {
+        font-size: 17px;
+    }
+
+    .card-content {
+        font-size: 14px;
+    }
+
+    .card-foot a {
+        font-size: 13px;
+    }
+}

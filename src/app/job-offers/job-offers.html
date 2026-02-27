@@ -1,0 +1,190 @@
+<div class="main">
+
+  <div #revealH1 class="header">
+    <ng-container *ngFor="let word of letters; let i = index">
+      <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+        [class.blue]="i < revealedCount && word.isBlue">
+        {{ word.word }}
+      </span>
+    </ng-container>
+  </div>
+
+  <div class="cards">
+    <!-- Loading / error / empty states -->
+    <ng-container *ngIf="loading()">
+
+      <div class="skeleton-wrapper">
+        <div class="skeleton-card sl_effect"></div>
+        <div class="skeleton-card sl_effect"></div>
+      </div>
+
+    </ng-container>
+
+    <div *ngIf="!loading() && error()" class="text-danger">
+      {{ error() }}
+    </div>
+
+    <div *ngIf="!loading() && !error() && jobs().length === 0">
+      No active job openings at the moment.
+    </div>
+
+    <!-- Dynamic job cards -->
+    <ng-container *ngIf="!loading()">
+      <div class="card" *ngFor="let job of jobs()">
+        <div>
+          <div class="card-title">{{ job.title }}</div>
+          <div class="card-sub-header">{{ job.department }}</div>
+
+          <div class="card-location">
+            <div>
+              <img class="location" src="assets/images/Career/location.svg" alt="" />
+              {{ job.location }}
+            </div>
+            <div>
+              <img class="time" src="assets/images/Career/time.svg" alt="" />
+              Full time
+              <!-- if you add 'type' column later, use {{ job.type }} -->
+            </div>
+          </div>
+
+          <div class="card-content">
+            {{ job.description }}
+          </div>
+        </div>
+
+        <div class="card-button">
+          <button data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="onApply(job)">
+            Apply Now
+          </button>
+        </div>
+      </div>
+    </ng-container>
+
+  </div>
+
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content px-4 py-4 rounded-4 h-auto">
+        <div class="modal-header p-0">
+          <h1 class="modal-title fs-2 fw-bold" id="exampleModalLabel">Apply Now!</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="container p-0 d-flex justify-content-center align-items-center">
+          <div class="modal-card p-0 rounded-3 position-relative" style="max-width: 500px; width: 100%;">
+            <div class=" p-0 ">
+              <form [formGroup]="careerForm" (ngSubmit)="onsubmitForm()">
+                <div class="px-4 my-3 py-3 pt-5 bg-body-tertiary rounded-4">
+                  <div class="mb-3">
+                    <input type="text" placeholder="First Name" formControlName="first_name"
+                      class="px-0 bg-body-tertiary fw-light form-control border-0 border-bottom rounded-0 shadow-none">
+                    <small class="text-danger"
+                      *ngIf="careerForm.get('first_name')?.touched && careerForm.get('first_name')?.errors?.['required']">
+                      First name is required.
+                    </small>
+                  </div>
+
+                  <div class="mb-3">
+                    <input type="text" placeholder="Last Name" formControlName="last_name"
+                      class="px-0 bg-body-tertiary fw-light form-control border-0 border-bottom rounded-0 shadow-none">
+                    <small class="text-danger"
+                      *ngIf="careerForm.get('last_name')?.touched && careerForm.get('last_name')?.errors?.['required']">
+                      Last name is required.
+                    </small>
+                  </div>
+
+                  <div class="mb-3">
+                    <input type="email" placeholder="Email" formControlName="email"
+                      class="px-0 bg-body-tertiary fw-light form-control border-0 border-bottom rounded-0 shadow-none">
+                    <small class="text-danger"
+                      *ngIf="careerForm.get('email')?.touched && careerForm.get('email')?.errors as err">
+
+                      <span *ngIf="err['required']">Email is required.</span>
+                      <span *ngIf="!err['required'] && err['email']">Enter a valid email.</span>
+
+                    </small>
+                  </div>
+
+                  <div class="mb-3">
+                    <input type="tel" maxlength="10" placeholder="Phone" formControlName="phone"
+                      class="px-0 bg-body-tertiary fw-light form-control border-0 border-bottom rounded-0 shadow-none">
+                    <small class="text-danger"
+                      *ngIf="careerForm.get('phone')?.touched && careerForm.get('phone')?.errors as err">
+
+                      <span *ngIf="err['required']">Phone number is required.</span>
+                      <span *ngIf="!err['required'] && err['pattern']">Enter valid 10-digit phone number.</span>
+
+                    </small>
+                  </div>
+
+                  <div class="mx-0 mt-5 mb-3 w-max-content d-flex flex-column">
+
+
+                    <label *ngIf="!uploadedFileName" class="btn btn-dark rounded-pill px-3 py-2 mb-1 upload-button">
+                      Upload Resume
+                      <img class="upload" src="assets/images/Career/upload.svg" alt="">
+
+                      <input type="file" hidden accept=".pdf,image/*" (change)="onFileSelected($event)" />
+                    </label>
+
+
+                    <div *ngIf="uploadedFileName" class="fileName d-flex align-items-center gap-2">
+
+                      <span class="fw-semibold">{{ uploadedFileName }}</span>
+
+                      <button type="button" class="btn btn-sm btn-outline-danger rounded-pill" (click)="removeFile()">
+                        ✕
+                      </button>
+                    </div>
+
+
+                    <small class="text-danger " *ngIf="careerForm.get('resume')?.touched && careerForm.get('resume')?.errors as err">
+
+                      <span *ngIf="err['required']">
+                        Please upload your resume.
+                      </span>
+
+                      <span *ngIf="err['invalidType']">
+                        Only PDF, JPG, PNG or WEBP allowed.
+                      </span>
+
+                      <span *ngIf="err['maxSize']">
+                        File size must be less than 3MB.
+                      </span>
+
+                    </small>
+
+                  </div>
+
+                </div>
+
+                <button type="submit" class="btn blue-btn px-5 py-2 w-20 my-2 rounded-pill float-end"
+                  [disabled]="isSubmitting()">
+                  {{ isSubmitting() ? 'Sending...' : 'Submit' }}
+                </button>
+              </form>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  @if (successMessage) {
+  <div class="success-message">
+    {{successMessage}}
+  </div>
+  }
+  @if (errorMessage) {
+  <div class="error-toast">
+    {{ errorMessage }}
+  </div>
+  }
+
+
+
+</div>

@@ -1,0 +1,57 @@
+<div class="main">
+  <div class="header">Our World in Pictures</div>
+  <div class="sub-header">
+    Explore the innovation, precision, and people behind KCPL.
+  </div>
+  <div class="content">
+    From the factory floor to finished product, from milestone events to everyday moments—this gallery brings our
+    journey to life.
+  </div>
+
+  <ng-container *ngIf="loading()">
+
+    
+    <div class="skeleton-filter-buttons sl_effect"></div>
+    
+
+    <div class="skeleton-wrapper">
+      <div class="skeleton-card sl_effect"></div>
+      <div class="skeleton-card sl_effect"></div>
+      <div class="skeleton-card sl_effect"></div>
+      <div class="skeleton-card sl_effect"></div>
+      <div class="skeleton-card sl_effect"></div>
+      <div class="skeleton-card sl_effect"></div>
+    </div>
+
+  </ng-container>
+
+  <ng-container *ngIf="!loading()">
+
+    <div class="filter-buttons">
+      @for (category of categories; track category) {
+      <button [class.active]="activeCategory() === category" (click)="filterImages(category)">
+        {{ category }}
+      </button>
+      }
+    </div>
+
+    <div class="gallery">
+      @for (image of filteredImages; track image.url) {
+      <div class="image-box" (click)="openImage(image.url)">
+        <img [src]="image.url" referrerpolicy="no-referrer" [alt]="image.category" loading="lazy" />
+      </div>
+      }
+    </div>
+
+  </ng-container>
+
+
+
+</div>
+
+<!-- Fullscreen Lightbox -->
+<div class="lightbox" *ngIf="selectedImage()" (click)="closeImage()">
+  <span class="close-btn" (click)="closeImage($event)">&times;</span>
+  <img [src]="selectedImage()" class="lightbox-img" />
+</div>
+<app-footer></app-footer>

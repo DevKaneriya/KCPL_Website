@@ -1,0 +1,94 @@
+.progress-wrap {
+  position: fixed;
+  right: 50px;
+  bottom: 50px;
+  height: 46px;
+  width: 46px;
+  cursor: pointer;
+  border-radius: 50%;
+  z-index: 999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px);
+  transition: all 200ms linear;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--blue);
+}
+ 
+.progress-wrap.active-progress {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+ .progress-wrap::after,
+.progress-wrap::before {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: opacity 200ms linear;
+}
+ 
+.progress-wrap::after {
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 5 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M17 15L12 10L7 15' stroke='%23ffffff' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+ 
+.progress-wrap::before {
+  opacity: 0;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 5 24 16' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M17 15L12 10L7 15' stroke='%23000000' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+}
+ 
+.progress-wrap:hover::after {
+  opacity: 0;
+}
+ 
+.progress-wrap:hover::before {
+  opacity: 1;
+}
+ 
+ 
+.progress-wrap svg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+ 
+.progress-wrap svg path {
+  fill: none;
+  stroke: #b0aeae;
+  stroke-width: 5;
+  transition: stroke-dashoffset 10ms linear;
+}
+ 
+@media (max-width: 768px) {
+  .progress-wrap {
+    width: 40px;
+    height: 40px;
+    bottom: 35px;
+    right: 15px;
+  }
+ 
+  .progress-wrap::after,
+  .progress-wrap::before {
+    font-size: 20px;
+  }
+}
+ 
+@media (max-width: 480px) {
+  .progress-wrap {
+    width: 35px;
+    height: 35px;
+    bottom: 30px;
+    right: 10px;
+  }
+ 
+  .progress-wrap::after,
+  .progress-wrap::before {
+    font-size: 18px;
+  }
+}

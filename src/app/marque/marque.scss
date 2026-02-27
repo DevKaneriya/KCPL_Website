@@ -1,0 +1,118 @@
+.div-up {
+  width: 100%;
+  background-color: #E5E5E5;
+  overflow: hidden;
+}
+
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-content {
+  display: inline-block;
+  will-change: transform, opacity;
+  white-space: nowrap;
+  animation: marquee 40s linear infinite;
+}
+
+.marquee-content span {
+  display: inline-block;
+  color: #C6C3C3;
+  font-size: 105px;
+  padding: 0 80px;
+  font-weight: 700;
+  letter-spacing: 10px;
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .div-up {
+    width: 100%;
+    background-color: #E5E5E5;
+    overflow: hidden;
+  }
+
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-content {
+    display: inline-block;
+    will-change: transform, opacity;
+    white-space: nowrap;
+    animation: marquee 40s linear infinite;
+  }
+
+  .marquee-content span {
+    display: inline-block;
+
+    color: #C6C3C3;
+    font-size: 105px;
+    padding: 0 80px;
+    font-weight: 700;
+    letter-spacing: 10px;
+  }
+
+}
+
+@media screen and (max-width: 576px) {
+  .div-up {
+    width: 100%;
+    background-color: #E5E5E5;
+    overflow: hidden;
+  }
+
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .marquee-content {
+    display: inline-block;
+    will-change: transform, opacity;
+    white-space: nowrap;
+    animation: marquee 30s linear infinite;
+  }
+
+  .marquee-content span {
+    display: inline-block;
+    color: #C6C3C3;
+    font-size: 45px !important;
+    padding: 0 25px !important;
+    font-weight: 700;
+    letter-spacing: 5px !important;
+  }
+}
+
+
+
+@media screen and (max-width: 1397px) {
+  .marquee-content span {
+    font-size: 98px;
+    padding: 0 75px;
+    letter-spacing: 14px;
+  }
+}
+
+@media screen and (max-width: 1229px) {
+  .marquee-content span {
+    font-size: 90px;
+    padding: 0 70px;
+    letter-spacing: 13px;
+  }
+}

@@ -1,0 +1,56 @@
+.main {
+    padding: 70px 80px; 
+    background-color: var(--dark);
+    color: white;
+    border-radius: 15px;
+}
+
+.header {
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+}
+
+.grey {
+  color: rgba(0, 0, 0, 0.33);
+}
+
+.black {
+  color: white;
+}
+
+.blue {
+ color: var(--blue);
+}
+
+.content {
+    font-size: var(--sub-header);
+    font-weight: var(--content-weight);
+    margin-top: 30px;
+    line-height: 1.3;
+    width: 60%;
+}
+
+
+
+@media screen and (max-width: 576px) {
+
+    .main {
+        padding: var(--padding);
+        color: white;
+        border-radius: 25px;
+    }
+
+    .header {
+        font-weight: var(--header-weight);
+        width: 100%;
+    }
+
+    .content {
+        font-size: var(--content);
+        font-weight: var(--content-weight);
+        margin-top: 20px;
+        line-height: 1.3;
+        width: 100%;
+    }
+
+}

@@ -1,0 +1,66 @@
+<div class="main">
+    <div class="flex">
+        <div class="left">
+            <div #revealH1 class="header">
+                <ng-container *ngFor="let word of letters; let i = index">
+                    <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                        [class.blue]="i < revealedCount && word.isBlue">
+                        {{ word.word }}
+                    </span>
+                </ng-container>
+            </div>
+            <div class="content">
+
+                <div class="mobile-image">
+                    <img src="assets/images/Warehouse/modern-manufacturing.png" alt="">
+                </div>
+
+                <div class="body">
+
+                    <div class="similar">
+                        KCPL's Warehouse System Supports:
+                    </div>
+
+                    <ul class="center">
+
+                        <li class="block">
+
+                            Material Synchronization
+
+                        </li>
+
+                        <li class="block">
+
+                            Just-In-Time (JIT) & Just-In-Sequence (JIS) Manufacturing
+
+                        </li>
+
+                        <li class="block">
+
+                            Lean Inventory Practices
+
+                        </li>
+                        <li class="block">
+
+                            Smooth integration with our production & distribution processes
+
+                        </li>
+                    </ul>
+
+                    <div class="similar">
+                        Our Warehousing Capability Isn't Just Infrastructure—It's A Core Enabler of Our Manufacturing
+                        Excellence.
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="image">
+            <img src="assets/images/Warehouse/modern-manufacturing.png" alt="">
+        </div>
+
+    </div>
+
+</div>

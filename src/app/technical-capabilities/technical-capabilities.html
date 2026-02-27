@@ -1,0 +1,61 @@
+<div class="main">
+    <div #revealTitle class="title">
+        <ng-container *ngFor="let word of titleWords; let i = index">
+            <span [class.grey]="i >= revealedTitleCount" [class.black]="i < revealedTitleCount">
+                {{ word }}
+            </span>
+        </ng-container>
+    </div>
+    <div class="subtitle">
+        Precision-engineered aluminium components manufactured in-house for high thermal efficiency and durability.
+    </div>
+    <div class="section-flex">
+
+        <div class="left-image">
+            <img src="assets/images/Manufacture/manufacturing-capabilities.png" alt="Manufacturing">
+        </div>
+
+        <div class="right-content">
+            <div class="outline-box">
+                <div class="box-title">Aluminium Fin</div>
+
+                <div class="box-desc">
+                    High-efficiency louvered aluminium fins designed to maximize heat transfer and optimize airflow.
+                    Manufactured in-house using high-speed fin mills, these fins ensure consistent performance across
+                    radiator and condenser applications.
+                </div>
+
+                <div class="cap-title">Capabilities:</div>
+
+                <div class="bullet-fin">
+                    <ul>
+                        <li>Fin Type: Louver</li>
+                        <li>Fin Heights: 5 mm / 8 mm</li>
+                        <li>Fin Pitch: 2.5 mm / 3.5 mm</li>
+                        <li>Fin Widths: 12 / 16 / 22 / 36 / 48 mm</li>
+                        <li>Fin Sheet Thickness: 0.07 mm / 0.08 mm</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="outline-box">
+                <div class="box-title">Aluminium Tube</div>
+
+                <div class="box-desc">
+                    Precision-formed aluminium tubes engineered for strength, brazing integrity, and long-term
+                    durability. Suitable for a wide range of condenser and radiator configurations.
+                </div>
+                <div class="cap-title">Capabilities:</div>
+                <div class="bullet-tube">
+                    <ul>
+                        <li>Tube Widths: 12 mm / 16 mm</li>
+                        <li>Tube Thickness: 2 mm / 1.3 mm</li>
+                        <li>Tube Sheet Thickness: 0.26 mm / 0.28 mm</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>

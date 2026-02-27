@@ -1,0 +1,336 @@
+.main {
+    padding: var(--padding);
+}
+
+.header {
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left {
+    width: 48%;
+}
+
+.left hr {
+    border: 1.5px solid rgba(198, 198, 198, 1);
+    margin: 10px 0;
+}
+
+.left-content {
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    padding-bottom: 28px;
+}
+
+.table {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 25px;
+}
+
+.field-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 20px;
+}
+
+.field {
+    font-size: var(--content);
+    font-weight: var(--sub-header-weight);
+}
+
+.field-content {
+
+    font-size: var(--content);
+    font-weight: var(--content-weight);
+    cursor: pointer;
+
+    &.width {
+        width: 320px;  
+        color: black;
+        text-decoration: none;
+    }
+
+    &.job {
+        font-weight: var(--content-weight);
+        cursor: pointer;
+        text-decoration: underline;
+    }
+
+    .job-a {
+        transition: all 0.2s ease;
+        padding: 0px 0px;
+    }
+
+    .job-a:hover {
+        color: var(--blue);
+    }
+
+}
+
+.icons {
+    display: flex;
+    gap: 7px;
+    padding: 0;
+
+    img {
+        width: 30px;
+    }
+
+    ;
+}
+
+
+.right {
+    background-color: rgba(245, 245, 245, 1);
+    width: 40%;
+    margin-top: 5px;
+    padding: 30px 35px 50px;
+    border-radius: 4px;
+}
+
+.right-content {
+    font-size: var(--sub-header);
+    font-weight: var(--sub-header-weight);
+    padding-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+
+    ::ng-deep input[type="text"],
+    ::ng-deep input[type="email"],
+    ::ng-deep input[type="tel"] {
+        border: none;
+        background-color: rgba(245, 245, 245, 1);
+        padding: 9px 0;
+        border-bottom: 2px solid #B6B6B6;
+    }
+
+    ::ng-deep input[type="text"]:focus,
+    ::ng-deep input[type="email"]:focus,
+    ::ng-deep input[type="tel"]:focus {
+        border-bottom: 2px solid;
+        outline: none;
+    }
+
+    ::ng-deep input[type="text"]::placeholder,
+    ::ng-deep input[type="email"]::placeholder,
+    ::ng-deep input[type="tel"]::placeholder {
+        font-size: var(--link);
+        color: #212121;
+    }
+
+}
+
+
+.error small {
+    color: #e53935;
+    font-size: 12px;
+    display: block;
+    margin-bottom: 0px;
+}
+
+input.ng-invalid.ng-touched {
+    border-bottom: 2px solid #e53935;
+}
+
+
+.button {
+    width: max-content;
+    border: none;
+    background-color: rgba(73, 73, 73, 1);
+    color: white;
+    font-size: var(--button);
+    font-weight: var(--content-weight);
+    border-radius: 50px;
+    padding: 10px 20px;
+    margin: 40px 0 0;
+    transition: all 0.5s ease-in-out;
+    border: 1px solid #494949;
+}
+
+.button:hover {
+    color: #494949;
+    background-color: white;
+    border: 1px solid #494949;
+}
+
+
+
+.success-message {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: #50A350;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 3s ease;
+    z-index: 1000;
+    margin-left: 20px;
+}
+
+.error-toast {
+    position: fixed;
+    top: 50px;
+    right: 20px;
+    background: #BD362F;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    animation: fadeInOut 3s ease;
+    z-index: 1000;
+    margin-left: 20px;
+}
+
+
+
+
+@media screen and (max-width: 576px) {
+
+    #hr {
+        display: none;
+    }
+
+    .main {
+        padding: 0;
+    }
+
+    .header {
+        font-size: var(--header);
+        font-weight: var(--header-weight);
+        padding: 40px 25px 0;
+    }
+
+    .flex {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .left {
+        width: 100%;
+        padding: 0px 25px 0px;
+    }
+
+    .left hr {
+        border: 1.5px solid rgba(198, 198, 198, 1);
+    }
+
+    .left-content {
+        font-size: var(--content);
+        font-weight: var(--content-weight);
+        padding-bottom: 5px;
+    }
+
+    .table {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .field-flex {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+        padding: 10px 0;
+    }
+
+    .field {
+        font-size: var(--content);
+    }
+
+    .field-content {
+
+        font-size: var(--content);
+
+        &.width {
+            width: 210px;
+        }
+
+        &.job {
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+
+    }
+
+    .icons {
+        display: flex;
+        gap: 7px;
+    }
+
+
+    .right {
+        width: 100%;
+        margin: 20px 0 20px 0;
+        padding: 30px 25px 40px;
+        border-radius: 4px;
+    }
+
+    .right-content {
+        font-size: 22px;
+        padding-bottom: 30px;
+    }
+
+    // .form {
+    //     display: flex;
+    //     flex-direction: column;
+    //     gap: 15px;
+
+
+    //     ::ng-deep input[type="text"],
+    //     ::ng-deep input[type="email"],
+    //     ::ng-deep input[type="number"] {
+    //         border: none;
+    //         background-color: rgba(245, 245, 245, 1);
+    //         padding: 7px 0;
+    //         border-bottom: 2px solid #B6B6B6;
+    //     }
+
+    //     ::ng-deep input[type="text"]:focus,
+    //     ::ng-deep input[type="email"]:focus,
+    //     ::ng-deep input[type="number"]:focus {
+    //         border-bottom: 2px solid;
+    //         outline: none;
+    //     }
+
+    //     ::ng-deep input[type="text"]::placeholder,
+    //     ::ng-deep input[type="email"]::placeholder,
+    //     ::ng-deep input[type="number"]::placeholder {
+    //         font-size: var(--link);
+    //         color: black;
+    //     }
+
+    // }
+
+    .button {
+        border: none;
+        background-color: rgba(73, 73, 73, 1);
+        color: white;
+        font-size: var(--button);
+        border-radius: 50px;
+        padding: 10px 20px;
+        margin: 30px 0 0;
+    }
+
+    .button:hover {
+        color: white;
+        background-color: rgba(73, 73, 73, 1);
+    }
+
+}

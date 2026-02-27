@@ -1,0 +1,48 @@
+.main {
+    background-image: url('/assets/images/Quality-Control/quality-control-hero.png');
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+.bg-color {
+    background-color: rgba(0, 0, 0, 0.43);
+    height: 100vh;
+    padding: var(--padding);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+}
+
+.header {
+    color: white;
+    font-size: var(--header);
+    font-weight: var(--header-weight);
+}
+
+.sub-header {
+    color: white;
+    font-size: var(--sub-header);
+    font-weight: var(--content-weight);
+    width: 60%;
+}
+
+@media screen and (max-width: 576px) {
+
+    .bg-color {
+        height: 70vh;
+        gap: 30px;
+    }
+
+    .header{
+        width: 100%;
+    }
+
+    .sub-header {
+        font-size: 20px;
+        width: 100%;
+    }
+
+}

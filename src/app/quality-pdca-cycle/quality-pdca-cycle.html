@@ -1,0 +1,66 @@
+<div class="main">
+    <div class="content-body">
+
+        <div #revealH1 class="header">
+                <ng-container *ngFor="let word of letters; let i = index">
+                    <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                        [class.blue]="i < revealedCount && word.isBlue">
+                        {{ word.word }}
+                    </span>
+                </ng-container>
+            </div>
+
+        <div class="content-text">
+
+            <div class="similar">
+                We adopt the proven Plan-Do-Check-Act (PDCA) methodology as the foundation of our quality management
+                system:
+            </div>
+
+            <div class="middle">
+
+                <div class="item">
+                    <img src="assets/images/Quality-Control/pdca-circle.svg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Plan:</span>
+                         Identify opportunities and define quality improvement goals
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="assets/images/Quality-Control/pdca-circle.svg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Do:</span>
+                         Implement changes and collect performance data
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="assets/images/Quality-Control/pdca-circle.svg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Check:</span>
+                         Analyze results against expected outcomes
+                    </p>
+                </div>
+                <div class="item">
+                    <img src="assets/images/Quality-Control/pdca-circle.svg" alt="">
+                    <p>
+                        <span style="font-weight: bold;">Act:</span>
+                         Standardize successful strategies and drive continuous improvement
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="similar">
+                At KCPL, quality isn't a final step — it's the standard that guides us every day.
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div class="image-section">
+            <img class="img1 reveal-image" src="assets/images/Quality-Control/pdca-cycle-img-1.png">
+            <img class="img2 reveal-image" src="assets/images/Home/eng2.jpg">
+        </div>
+
+    </div>
+</div>
