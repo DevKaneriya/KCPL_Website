@@ -4,11 +4,12 @@ import { Footer } from '../footer/footer';
 import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Contact, ContactFormPayload } from '../../services/contact';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from "@angular/router";
 
 
 @Component({
   selector: 'app-contact-page',
-  imports: [News, Footer, ReactiveFormsModule, CommonModule],
+  imports: [News, Footer, ReactiveFormsModule, CommonModule, RouterLink],
   templateUrl: './contact-page.html',
   styleUrls: ['./contact-page.scss']
 })

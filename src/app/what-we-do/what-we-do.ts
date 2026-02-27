@@ -32,7 +32,7 @@ export class WhatWeDo {
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    const blackText = 'Find out What we do at KCPL';
+    const blackText = 'Find Out What We Do at KCPL';
     const blueText = '';
 
     const mapWords = (text: string, isBlue: boolean) =>

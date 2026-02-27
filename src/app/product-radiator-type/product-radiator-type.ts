@@ -2,10 +2,11 @@ import { CommonModule } from '@angular/common';
 import { Component, effect } from '@angular/core';
 import { Globalservice } from '../../services/globalservice';
 import { ProductItem } from '../../services/product';
+import { RouterLink } from "@angular/router";
 
 @Component({
   selector: 'app-product-radiator-type',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './product-radiator-type.html',
   styleUrl: './product-radiator-type.scss'
 })

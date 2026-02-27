@@ -32,7 +32,7 @@ export class Founder {
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    const blackText = 'What drives us';
+    const blackText = 'What Drives Us';
     const blueText = '';
 
     const mapWords = (text: string, isBlue: boolean) =>
