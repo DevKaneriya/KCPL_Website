@@ -7,12 +7,17 @@ import {
   ChangeDetectorRef,
   inject,
   signal,
-  effect
+  effect,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { FormGroup, FormBuilder, Validators, ReactiveFormsModule } from '@angular/forms';
+import {
+  FormGroup,
+  FormBuilder,
+  Validators,
+  ReactiveFormsModule,
+} from '@angular/forms';
 import { Career, Job } from '../../services/career';
 import { environment } from '../../environments/environment';
 import { Globalservice } from '../../services/globalservice';
@@ -21,10 +26,9 @@ import { Globalservice } from '../../services/globalservice';
   selector: 'app-job-offers',
   imports: [CommonModule, ReactiveFormsModule],
   templateUrl: './job-offers.html',
-  styleUrl: './job-offers.scss'
+  styleUrl: './job-offers.scss',
 })
 export class JobOffers implements OnInit, AfterViewInit {
-
   phpMailerURL = 'http://localhost/Phpmailer/career-mailer.php';
   sheetURL = environment.apiUrl + '?route=apply';
 
@@ -39,7 +43,7 @@ export class JobOffers implements OnInit, AfterViewInit {
   private fb = inject(FormBuilder);
 
   jobs = signal<Job[]>([]);
-  loading = signal<boolean>(false);
+  loading = signal<boolean>(true);
   error = signal<string | null>(null);
 
   careerForm!: FormGroup;
@@ -48,7 +52,8 @@ export class JobOffers implements OnInit, AfterViewInit {
   letters: { word: string; isBlue: boolean }[] = [];
   revealedCount = 0;
 
-  @ViewChild('revealH1', { static: true }) revealH1!: ElementRef<HTMLHeadingElement>;
+  @ViewChild('revealH1', { static: true })
+  revealH1!: ElementRef<HTMLHeadingElement>;
   @ViewChild('animateTarget', { static: true }) animateTarget!: ElementRef;
 
   private readonly allowedMimeTypes = [
@@ -56,32 +61,27 @@ export class JobOffers implements OnInit, AfterViewInit {
     'image/jpeg',
     'image/png',
     'image/jpg',
-    'image/webp'
+    'image/webp',
   ];
 
   private readonly maxFileSize = 3 * 1024 * 1024;
 
-  constructor(private cdr: ChangeDetectorRef,
-    public appData: Globalservice
+  constructor(
+    private cdr: ChangeDetectorRef,
+    public appData: Globalservice,
   ) {
-
     effect(() => {
+      const globalJobs = this.appData.jobs();
 
-      const globalJobs =
-        this.appData.jobs();
-
-      /* wait until global jobs exist */
-      if (!globalJobs.length)
-        return;
+      /* wait until global loading is done */
+      if (this.appData.loading()) return;
 
       this.jobs.set(globalJobs);
 
       this.loading.set(false);
 
       this.error.set(null);
-
     });
-
   }
 
   // private loadJobs(): void {
@@ -105,7 +105,6 @@ export class JobOffers implements OnInit, AfterViewInit {
   }
 
   onFileSelected(event: any): void {
-
     const file = event.target.files?.[0];
     const resumeControl = this.careerForm.get('resume');
 
@@ -134,7 +133,6 @@ export class JobOffers implements OnInit, AfterViewInit {
       return;
     }
 
-
     this.uploadedFile = file;
     this.uploadedFileName = file.name;
 
@@ -154,10 +152,7 @@ export class JobOffers implements OnInit, AfterViewInit {
     resumeControl?.markAsTouched(); // show error
   }
 
-
-
   onsubmitForm(): void {
-
     const job = this.selectedJob();
 
     if (!job) {
@@ -190,14 +185,11 @@ export class JobOffers implements OnInit, AfterViewInit {
 
     fetch(this.phpMailerURL, {
       method: 'POST',
-      body: formData
+      body: formData,
     })
-      .then(res => res.json())
-      .then(res => {
-
+      .then((res) => res.json())
+      .then((res) => {
         if (res.status === 'success') {
-
-
           fetch(this.sheetURL, {
             method: 'POST',
             body: JSON.stringify({
@@ -206,16 +198,15 @@ export class JobOffers implements OnInit, AfterViewInit {
               email: this.careerForm.value.email,
               phone: this.careerForm.value.phone,
               jobId: job.id,
-              jobTitle: job.title
-            })
-          }).catch(err => console.error('Sheet log error:', err));
+              jobTitle: job.title,
+            }),
+          }).catch((err) => console.error('Sheet log error:', err));
 
           this.showSuccess('Application sent successfully!');
           this.careerForm.reset();
           this.removeFile();
 
           (document.querySelector('.btn-close') as HTMLElement)?.click();
-
         } else {
           this.showError(res.message || 'Email failed to send.');
         }
@@ -246,34 +237,27 @@ export class JobOffers implements OnInit, AfterViewInit {
     }, 5000);
   }
 
-
   ngOnInit(): void {
-
     this.careerForm = this.fb.group({
       first_name: ['', Validators.required],
       last_name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      phone: ['', [
-        Validators.required,
-        Validators.pattern(/^[6-9]\d{9}$/)
-      ]],
+      phone: ['', [Validators.required, Validators.pattern(/^[6-9]\d{9}$/)]],
       resume: [null, Validators.required],
     });
-
 
     const blueText = 'Latest Job Offers';
 
     const mapWords = (text: string, isBlue: boolean) =>
       text.split(' ').map((word) => ({
         word,
-        isBlue
+        isBlue,
       }));
 
     this.letters = [...mapWords(blueText, true)];
   }
 
   ngAfterViewInit(): void {
-
     const modalEl = document.getElementById('exampleModal');
 
     modalEl?.addEventListener('hidden.bs.modal', () => {
@@ -284,7 +268,6 @@ export class JobOffers implements OnInit, AfterViewInit {
       this.uploadedFile = null;
       this.uploadedFileName = null;
     });
-
 
     gsap.registerPlugin(ScrollTrigger);
 
@@ -304,15 +287,15 @@ export class JobOffers implements OnInit, AfterViewInit {
             start: 'top 85%',
             end: 'top 45%',
             scrub: true,
-            invalidateOnRefresh: true
+            invalidateOnRefresh: true,
           },
           onUpdate: () => {
             this.revealedCount = Math.floor(
-              gsap.getProperty(this, 'revealedCount') as number
+              gsap.getProperty(this, 'revealedCount') as number,
             );
             this.cdr.detectChanges();
-          }
-        }
+          },
+        },
       );
     }, 0);
   }

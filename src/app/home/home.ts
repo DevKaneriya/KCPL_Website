@@ -1,7 +1,6 @@
-import { Component, AfterViewInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-
 import { Quality } from '../quality/quality';
 import { Cooling } from '../cooling/cooling';
 import { News } from '../news/news';
@@ -14,6 +13,7 @@ import { Engineering } from '../engineering/engineering';
 import { Marque } from '../marque/marque';
 import { DivDown } from '../div-down/div-down';
 import { DifferenceSection } from "../difference-section/difference-section";
+import { RouterLink } from "@angular/router";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -33,7 +33,8 @@ gsap.registerPlugin(ScrollTrigger);
     Marque,
     DivDown,
     DifferenceSection,
-  ],
+    RouterLink
+],
   templateUrl: './home.html',
   styleUrls: ['./home.scss']
 })
@@ -57,5 +58,7 @@ export class Home {
       });
     }
   }
-
+  
+  
 }
+

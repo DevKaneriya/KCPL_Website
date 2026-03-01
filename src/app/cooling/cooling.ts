@@ -9,10 +9,11 @@ import {
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-cooling',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './cooling.html',
   styleUrl: './cooling.scss'
 })
