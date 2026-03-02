@@ -5,10 +5,11 @@ import { WarehouseModernManufacturing } from "../warehouse-modern-manufacturing/
 import { WarehouseFlexibleCapacity } from "../warehouse-flexible-capacity/warehouse-flexible-capacity";
 import { ReachOut } from "../reach-out/reach-out";
 import { Footer } from "../footer/footer";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-warehouse-page',
-  imports: [WarehouseCentralizedStorage, WarehouseInventoryManagement, WarehouseModernManufacturing, WarehouseFlexibleCapacity, ReachOut, Footer],
+  imports: [WarehouseCentralizedStorage, WarehouseInventoryManagement, WarehouseModernManufacturing, WarehouseFlexibleCapacity, ReachOut, Footer, RouterLink],
   templateUrl: './warehouse-page.html',
   styleUrl: './warehouse-page.scss'
 })
@@ -21,13 +22,13 @@ export class WarehousePage implements AfterViewInit {
 
     if (carouselElement && bootstrapAny && typeof bootstrapAny.Carousel === 'function') {
       new bootstrapAny.Carousel(carouselElement, {
-        interval: 3000,
+        interval: 5000,
         pause: false,
         ride: 'carousel'
       });
     } else if (carouselElement && (window as any).$) {
       (window as any).$('#bgCarousel').carousel({
-        interval: 3000,
+        interval: 5000,
         pause: false
       });
     }

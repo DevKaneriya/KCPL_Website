@@ -57,11 +57,11 @@
 .button {
     font-weight: var(--button-weight);
     font-size: 19px;
-    padding: 9px 29px;
+    padding: 10px 29px;
     color: white;
     background-color: var(--blue);
     align-content: center;
-    border-radius: 5px;
+    border-radius: 6px;
     border: transparent;
     transition: all 0.5s ease;
     cursor: pointer;
@@ -69,7 +69,7 @@
 }
 
 .button:hover {
-    transform: scale(1.07);
+    transform: scale(1.05);
     background-color: white;
     color: var(--blue);
 }
@@ -82,7 +82,7 @@
 
     .home-header {
         position: relative;
-        height: 30vh;
+        height: 38vh;
         width: 100%;
         overflow: hidden;
     }
@@ -115,15 +115,9 @@
     .button {
         font-weight: var(--button-weight);
         font-size: var(--button) !important;
-        padding: 4px 14px !important;
-        color: white;
-        background-color: var(--blue);
-        align-content: center;
-
-        border: transparent;
-        transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
-        cursor: pointer;
+        padding: 5px 14px !important;
         margin-top: 10px !important;
+        border-radius: 4px;
     }
 
     .button:hover {

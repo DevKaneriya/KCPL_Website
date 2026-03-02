@@ -5,6 +5,7 @@ import { ReachOut } from "../reach-out/reach-out";
 import { ManufacturingQualitySystems } from "../manufacturing-quality-systems/manufacturing-quality-systems";
 import { TechnicalCapabilities } from "../technical-capabilities/technical-capabilities";
 
+
 @Component({
   selector: 'app-manufacturing-page',
   imports: [ ManufacturingRawMaterial, Footer, ReachOut, ManufacturingQualitySystems, TechnicalCapabilities],
@@ -20,15 +21,22 @@ export class ManufacturingPage implements AfterViewInit {
 
     if (carouselElement && bootstrapAny && typeof bootstrapAny.Carousel === 'function') {
       new bootstrapAny.Carousel(carouselElement, {
-        interval: 3000,
+        interval: 5000,
         pause: false,
         ride: 'carousel'
       });
     } else if (carouselElement && (window as any).$) {
       (window as any).$('#bgCarousel').carousel({
-        interval: 3000,
+        interval: 5000,
         pause: false
       });
+    }
+  }
+
+  scrollToQualitySystems(): void {
+    const target = document.getElementById('manufacturing-quality-systems');
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   }
 }

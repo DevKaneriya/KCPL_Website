@@ -9,7 +9,6 @@ import {
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Leadership } from "../leadership/leadership";
 import { Footer } from "../footer/footer";
 import { WhatWeDo } from "../what-we-do/what-we-do";
 import { MorePower } from "../more-power/more-power";
@@ -18,7 +17,7 @@ import { Founder } from "../founder/founder";
 
 @Component({
   selector: 'app-about',
-  imports: [Leadership, Footer, WhatWeDo, MorePower, Journey, Founder, CommonModule],
+  imports: [Footer, WhatWeDo, MorePower, Journey, Founder, CommonModule],
   templateUrl: './about.html',
   styleUrl: './about.scss'
 })

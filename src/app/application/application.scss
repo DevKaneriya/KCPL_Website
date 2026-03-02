@@ -28,7 +28,7 @@
 
 .image {
   width: 42%;
-  height: 500px;
+  height: 450px;
   position: relative;
   background-size: cover;
   background-repeat: no-repeat;
@@ -64,6 +64,7 @@
   width: 45%;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   gap: 30px;
 }
 
@@ -76,13 +77,13 @@
 .body {
   font-size: var(--content);
   font-weight: var(--content-weight);
-  min-height: 200px;
+  min-height: 110px;
 }
 
 .footer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   gap: 10px;
 }
 
