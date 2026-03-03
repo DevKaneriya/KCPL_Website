@@ -1,11 +1,12 @@
-<div class="header" [ngClass]="{ 'transparent': isTransparent && !isMenuOpen, 'solid': !isTransparent || isMenuOpen, 'menu-open-header': isMenuOpen }">
+<div class="header"
+  [ngClass]="{ 'transparent': isTransparent && !isMenuOpen, 'solid': !isTransparent || isMenuOpen, 'menu-open-header': isMenuOpen }">
   <a routerLink="/" (click)="closeMenu()">
     <img class="logo" [src]="(isTransparent && !isMenuOpen)
       ? 'assets/images/Home/logo-white.png'
       : 'assets/images/Home/logo.png'" alt="Logo" />
   </a>
 
- 
+
   <!-- Mobile Menu Icon -->
   <button class="menu-btn" (click)="toggleMenu()"
     [ngClass]="{ 'white-icon': isTransparent && !isMenuOpen, 'black-icon': !isTransparent || isMenuOpen, 'open': isMenuOpen }">
@@ -66,32 +67,40 @@
 <!-- Mobile Menu -->
 <div class="mobile-menu" [ngClass]="{ 'open': isMenuOpen }">
   <nav>
-    <a [ngClass]="{ 'active': router.url.includes('/about') }" (click)="closeMenu()">About</a>
+    <a routerLink="/about" [ngClass]="{ 'active': router.url.includes('/about') }" (click)="closeMenu()">About</a>
 
-    <div class="nav-item dropdown-toggle-wrapper btn-group" (click)="toggleIndustrialDropdown(); $event.preventDefault()">
+    <div class="nav-item dropdown-toggle-wrapper btn-group"
+      (click)="toggleIndustrialDropdown(); $event.preventDefault()">
       <a class="nav-link">Industrial</a>
-      <svg width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><rect x="0" fill="none" width="24" height="24"/><g><path d="M7 10l5 5 5-5"/></g></svg>
+      <svg width="40px" height="40px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" fill="none" width="24" height="24" />
+        <g>
+          <path d="M7 10l5 5 5-5" />
+        </g>
+      </svg>
     </div>
 
     <div class="dropdown-content" [ngClass]="{ 'open': isIndustrialOpen }">
-      <a class="nav-link" href="/industrial/quality-control"
-        [ngClass]="{ 'active': router.url.includes('/industrial/quality-control') }">
+      <a routerLink="/industrial/quality-control" class="nav-link"
+        [ngClass]="{ 'active': router.url.includes('/industrial/quality-control') }" (click)="closeMenu()">
         Quality Control
       </a>
-      <a class="nav-link" href="/industrial/warehouse"
-        [ngClass]="{ 'active': router.url.includes('/industrial/warehouse') }">
+      <a routerLink="/industrial/warehouse" class="nav-link"
+        [ngClass]="{ 'active': router.url.includes('/industrial/warehouse') }" (click)="closeMenu()">
         Warehouse
       </a>
-      <a class="nav-link" href="/industrial/manufacturing"
-        [ngClass]="{ 'active': router.url.includes('/industrial/manufacturing') }">
+      <a routerLink="/industrial/manufacturing" class="nav-link"
+        [ngClass]="{ 'active': router.url.includes('/industrial/manufacturing') }" (click)="closeMenu()">
         Manufacturing
       </a>
     </div>
 
 
-    <a routerLink="/products" [ngClass]="{ 'active': router.url.includes('/products') }" (click)="closeMenu()">Products</a>
+    <a routerLink="/products" [ngClass]="{ 'active': router.url.includes('/products') }"
+      (click)="closeMenu()">Products</a>
     <a routerLink="/career" [ngClass]="{ 'active': router.url.includes('/career') }" (click)="closeMenu()">Career</a>
-    <a routerLink="/contact" [ngClass]="{ 'active': router.url.includes('/contact') }" (click)="closeMenu()">Contact Us</a>
+    <a routerLink="/contact" [ngClass]="{ 'active': router.url.includes('/contact') }" (click)="closeMenu()">Contact
+      Us</a>
     <a routerLink="/gallery" [ngClass]="{ 'active': router.url.includes('/gallery') }" (click)="closeMenu()">Gallery</a>
 
 

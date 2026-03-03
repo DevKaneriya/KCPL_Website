@@ -24,11 +24,21 @@ export class Header {
 
   toggleMenu() {
     this.isMenuOpen = !this.isMenuOpen;
+    this.handleScroll();
   }
 
   closeMenu() {
     this.isMenuOpen = false;
     this.isIndustrialOpen = false;
+    this.handleScroll();
+  }
+
+  handleScroll() {
+    if (this.isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
   }
 
   // Detect clicks anywhere in the document
@@ -41,5 +51,4 @@ export class Header {
       }
     }
   }
-
 }
