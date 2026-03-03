@@ -12,7 +12,7 @@
 .header.transparent {
   position: absolute;
   top: 0;
-  left: 0;
+  left: 0; 
   right: 0;
   background-color: transparent;
   color: white;
@@ -42,6 +42,8 @@
   font-size: 18px;
   color: inherit;
   text-decoration: none;
+    font-weight: 500;
+
 }
 
 .desktop {
@@ -73,7 +75,7 @@
 
 // active link underline
 .nav a.active-link {
-  font-weight: 600;
+  font-weight: 500;
 }
 
 .nav a.active-link::after {
@@ -99,7 +101,7 @@ hr {
 
 .dropdown-item:hover {
   color: white !important;
-  background-color: var(--dark)!important;
+  background-color: var(--blue)!important;
 }
 
 .dropdown-item.first:hover {
@@ -114,63 +116,46 @@ hr {
 
 .dropdown-item.active {
   color: white !important;
-  background-color: var(--dark) !important;
+  background-color: var(--blue) !important;
 }
 
 .dropdown-item.active1 {
   color: white !important;
-  background-color: var(--dark) !important;
+  background-color: var(--blue) !important;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
 }
 
 .dropdown-item.active2 {
   color: white !important;
-  background-color: var(--dark) !important;
+  background-color: var(--blue) !important;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
 }
 
 .dropdown-item:focus {
   color: white !important;
-  background-color: var(--dark)!important;
+  background-color: var(--blue)!important;
 }
 
-/* Wrapper for the toggle row */
-.dropdown-toggle-wrapper {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-}
-
-
-
-.dropdown-toggle::after {
-  display: none !important;
-}
 
 .dropdown-image {
-  height: 9px;
+  height: 12px;
   margin-left: 4px;
   transition: transform 0.4s ease;
 }
 
-.dropdown-image.rotate {
-  transform: rotate(180deg);
-}
-
-
-/* Arrow styles */
+// /* Arrow styles */
 .arrow {
   transition: transform 0.3s ease;
   width: 20px;
   margin-right: 15px;
 }
 
-.arrow.rotate {
-  transform: rotate(180deg);
+.rotate {
+  transform: rotate(180deg) !important;
 }
+
 
 
 
@@ -199,28 +184,74 @@ hr {
   border-bottom: none !important;
 }
 
+.dropdown-toggle-wrapper {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  width: 100%;
+}
+.dropdown-toggle-wrapper a {
+  width: auto !important;
+}
 
+.menu-open-header {
+  z-index: 2001 !important;
+}
 
 .menu-btn {
-  font-size: 30px;
   background: none;
   border: none;
   display: none;
   cursor: pointer;
+  width: 30px;
+  height: 24px;
+  position: relative;
+  z-index: 2005;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    border-radius: 3px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+  
+  span:nth-child(1) { top: 0px; }
+  span:nth-child(2) { top: 10.5px; }
+  span:nth-child(3) { top: 21px; }
+
+  &.open {
+    span:nth-child(1) {
+      top: 10.5px;
+      transform: rotate(135deg);
+    }
+    span:nth-child(2) {
+      opacity: 0;
+      display: none;
+    }
+    span:nth-child(3) {
+      top: 10.5px;
+      transform: rotate(-135deg);
+    }
+  }
 }
 
 /* Color for the menu icon */
-.menu-btn.white-icon {
-  color: white;
+.menu-btn.white-icon span {
+  background: white;
 }
 
-.menu-btn.black-icon {
-  color: black;
+.menu-btn.black-icon span {
+  background: black;
 }
 
 /* Mobile Menu Overlay */
 .mobile-menu {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
@@ -248,12 +279,18 @@ hr {
 }
 
 .mobile-menu nav a {
-  font-size: 24px;
+  font-size: 20px;
   padding: 15px 0;
   color: black;
+  font-weight: 500;
   text-decoration: none;
 }
-
+.mobile-menu nav a.active{
+  color: var(--blue);
+}
+.btn-group{
+  align-items: center !important;
+}
 .btn-group a {
   width: 100%;
 }
@@ -301,12 +338,12 @@ hr {
   }
 
   .dropdown-item {
-    font-size: 20px !important;
+    font-size: 18px !important;
     width: 100%;
     padding: 4px 12px !important;
     margin: 0;
     border-bottom: none !important;
   }
-
+ 
   
 }
