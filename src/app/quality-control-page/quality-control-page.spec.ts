@@ -1,5 +1,4 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { QualityControlPage } from './quality-control-page';
 
 describe('QualityControlPage', () => {
@@ -9,8 +8,7 @@ describe('QualityControlPage', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       imports: [QualityControlPage]
-    })
-    .compileComponents();
+    }).compileComponents();
 
     fixture = TestBed.createComponent(QualityControlPage);
     component = fixture.componentInstance;

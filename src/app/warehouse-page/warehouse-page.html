@@ -1,37 +1,27 @@
-<div id="bgCarousel" class="carousel slide carousel-fade"
-     data-bs-ride="carousel"
-     data-bs-interval="3000"
-     data-bs-pause="false">
-    <div class="carousel-inner">
-        <div class="carousel-item active main"
-            style="background-image: url('/assets/images/Warehouse/warehouse-hero.png');">
-            <div class="bg-color">
-                <div class="header">Warehouse & Inventory Excellence</div>
-                <div class="sub-header">
-                    Optimizing Storage. Accelerating Delivery. Enhancing Customer Trust.
-                </div>
-                <div class="button" routerLink='/about'>
-                    Explore Our Facility
-                </div>
-            </div>
+<div class="main">
+
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/images/Warehouse/warehouse-main.mp4" type="video/mp4">
+    </video>
+
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Content -->
+    <div class="content">
+        <div class="header">Warehouse & Inventory Excellence</div>
+
+        <div class="sub-header">
+            Optimizing Storage. Accelerating Delivery. Enhancing Customer Trust.
         </div>
 
-        <div class="carousel-item main" style="background-image: url('/assets/images/Quality-Control/quality-control-hero.png');">
-            <div class="bg-color">
-                <div class="header">Warehouse & Inventory Excellence</div>
-                <div class="sub-header">
-                    Optimizing Storage. Accelerating Delivery. Enhancing Customer Trust.
-                </div>
-                <div class="button" routerLink='/about'>
-                    Explore Our Facility
-                </div>
-            </div>
+        <div class="button" routerLink="/about">
+            Explore Our Facility
         </div>
-
     </div>
+
 </div>
-
-
 
 <app-warehouse-centralized-storage></app-warehouse-centralized-storage>
 <app-warehouse-inventory-management></app-warehouse-inventory-management>
