@@ -14,10 +14,11 @@ import { WhatWeDo } from "../what-we-do/what-we-do";
 import { MorePower } from "../more-power/more-power";
 import { Journey } from "../journey/journey";
 import { Founder } from "../founder/founder";
+import { PrecisionStage } from '../precision-stage/precision-stage';
 
 @Component({
   selector: 'app-about',
-  imports: [Footer, WhatWeDo, MorePower, Journey, Founder, CommonModule],
+  imports: [Footer, WhatWeDo, MorePower, Journey, Founder, PrecisionStage, CommonModule],
   templateUrl: './about.html',
   styleUrl: './about.scss'
 })
