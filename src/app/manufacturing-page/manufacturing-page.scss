@@ -1,85 +1,104 @@
+/* Hero Section */
 .main {
-    background-image: url('/assets/images/Quality-Control/quality-control-hero.png');
-    background-size: cover;
-    background-position: center;
-    overflow: hidden;
-    background-repeat: no-repeat;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
 }
 
-.bg-color {
-    background-color: rgba(0, 0, 0, 0.43);
-    height: 100vh;
-    padding: var(--padding);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 20px;
+/* Background Video */
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
 }
 
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.43);
+  z-index: 1;
+}
+
+/* Content */
+.content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  padding: var(--padding);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+  color: white;
+}
+
+/* Typography (UNCHANGED) */
 .header {
-    color: white;
-    font-size: var(--header);
-    font-weight: var(--header-weight);
+  font-size: var(--header);
+  font-weight: var(--header-weight);
 }
 
 .sub-header {
-    color: white;
-    font-size: var(--sub-header);
-    font-weight: var(--content-weight);
-    width: 60%;
+  font-size: var(--sub-header);
+  font-weight: var(--content-weight);
+  width: 80%;
 }
 
+/* Button */
 .button {
-    font-weight: var(--button-weight);
-    font-size: 19px;
-    padding: 10px 29px;
-    color: white;
-    background-color: var(--blue);
-    border-radius: 6px;
-    border: transparent;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    margin-top: 20px;
-    width: max-content;
+  font-weight: var(--button-weight);
+  font-size: 19px;
+  padding: 10px 29px;
+  color: white;
+  background-color: var(--blue);
+  border-radius: 6px;
+  border: transparent;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin-top: 20px;
+  width: max-content;
 }
 
 .button:hover {
-    transform: scale(1.05);
-    background-color: white;
-    color: var(--blue);
+  transform: scale(1.05);
+  background-color: white;
+  color: var(--blue);
 }
 
-
-
-
+/* Mobile */
 @media screen and (max-width: 576px) {
+  .main {
+    height: 70vh;
+  }
 
-    .bg-color {
-        height: 70vh;
-        gap: 30px;
-    }
+  .content {
+    padding: 40px 20px;
+  }
 
-    .header {
-        width: 100%;
-    }
+  .sub-header {
+    width: 100%;
+  }
 
-    .sub-header {
-        font-size: 20px;
-        width: 100%;
-    }
+  .button {
+    padding: 6px 16px;
+    margin-top: 12px;
+    border-radius: 4px;
+  }
 
-    .button {
-        font-weight: var(--button-weight);
-        font-size: var(--button) !important;
-        padding: 5px 14px !important;
-        margin-top: 10px !important;
-        border-radius: 4px;
-    }
+  .button:hover {
+    transform: none;
+    background-color: var(--blue);
+    color: white;
+  }
 
-    .button:hover {
-        transform: scale(1);
-        background-color: var(--blue);
-        color: white;
-    }
-
+  .bg-video {
+    object-position: center;
+  }
 }

@@ -1,39 +1,28 @@
-<div id="bgCarousel" class="carousel slide carousel-fade"
-     data-bs-ride="carousel"
-     data-bs-interval="3000"
-     data-bs-pause="false">
-    <div class="carousel-inner">
-        <div class="carousel-item active main"
-            style="background-image: url('/assets/images/Quality-Control/quality-control-hero.png');">
-            <div class="bg-color">
-                <div class="header">Manufacturing Excellence</div>
-                <div class="sub-header">
-                    With decades of expertise in heat exchanger manufacturing, we combine advanced technology, precision engineering, and strict quality controls to deliver reliable, high-performance solutions at scale.
-                </div>
-                <div class="button" (click)="scrollToQualitySystems()">
-                    Inside Our Manufacturing
-                </div>
-            </div>
-        </div>
+<div class="main">
 
-        <div class="carousel-item main" style="background-image: url('/assets/images/Warehouse/warehouse-hero.png');">
-            <div class="bg-color">
-                <div class="header">Manufacturing Excellence</div>
-                <div class="sub-header">
-                    With decades of expertise in heat exchanger manufacturing, we combine advanced technology, precision engineering, and strict quality controls to deliver reliable, high-performance solutions at scale.
-                </div>
-                <div class="button" (click)="scrollToQualitySystems()">
-                    Inside Our Manufacturing
-                </div>
-            </div>
-        </div>
+    <!-- Background Video -->
+    <video class="bg-video" autoplay muted loop playsinline preload="auto">
+        <source src="assets/images/Manufacture/manufacturing-main.mp4" type="video/mp4">
+    </video>
 
+    <!-- Overlay -->
+    <div class="overlay"></div>
+
+    <!-- Dynamic Content -->
+    <div class="content">
+        <h1 class="header">{{ slides[currentSlide].title }}</h1>
+
+        <p class="sub-header">
+            {{ slides[currentSlide].description }}
+        </p>
+
+        <button class="button" (click)="scrollToQualitySystems()">
+            {{ slides[currentSlide].buttonText }}
+        </button>
     </div>
+
 </div>
 
-
-
-<!-- <app-manufacturing-in-house></app-manufacturing-in-house> -->
 <app-manufacturing-raw-material></app-manufacturing-raw-material>
 <app-manufacturing-quality-systems id="manufacturing-quality-systems"></app-manufacturing-quality-systems>
 <app-technical-capabilities></app-technical-capabilities>
