@@ -30,6 +30,7 @@ export class Founder {
 
 
   constructor(private cdr: ChangeDetectorRef) { }
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
 
   ngOnInit(): void {
     const blackText = 'What Drives Us';
@@ -76,6 +77,28 @@ export class Founder {
       );
     }, 0);
 
-  }
+    
+    const video = this.bgVideo.nativeElement;
 
-}
+    video.muted = true;
+    video.volume = 0;
+
+    // Force reload + play
+    video.load();
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+        // Autoplay blocked – browser policy
+      });
+    }
+
+  }
+  
+
+ 
+    
+  
+    
+  }  
+
