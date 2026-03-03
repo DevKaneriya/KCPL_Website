@@ -54,7 +54,6 @@ export class Home {
     const playPromise = video.play();
     if (playPromise !== undefined) {
       playPromise.catch(() => {
-        // Autoplay blocked – browser policy
       });
     }
   }

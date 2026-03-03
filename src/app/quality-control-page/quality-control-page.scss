@@ -84,9 +84,11 @@
   }
 
   .button {
-    padding: 6px 16px;
+    padding: 5px 16px;
     margin-top: 12px;
     border-radius: 4px;
+    font-weight: var(--button-weight);
+    font-size: var(--button)
   }
 
   .button:hover {
