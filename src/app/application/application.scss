@@ -150,13 +150,13 @@
 
   .body {
     font-size: var(--content) !important;
-    min-height: 160px;
+    min-height: 80px;
   }
 
   .footer {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: start;
     gap: 10px;
   }
 
