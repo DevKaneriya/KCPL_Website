@@ -1,152 +1,146 @@
 .main {
-    background-color: #f9f9f9;
-    padding: var(--padding);
+  background-color: #f9f9f9;
+  padding: var(--padding);
 }
 
 .mission-wrap {
-    display: flex;
-    gap: 80px;
+  display: flex;
+  gap: 80px;
 }
 
 .mission-left {
-    flex: 1;
-    position: sticky;
-    top: 120px;
-    height: fit-content;
-    padding-bottom: 56px;
+  flex: 1;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  padding-bottom: 56px;
 }
 
 .mission-left h2 {
-    font-size: var(--header);
-    font-weight: var(--header-weight);
-    margin-bottom: 16px;
+  font-size: var(--header);
+  font-weight: var(--header-weight);
+  margin-bottom: 16px;
 }
 
 .mission-left p {
-    font-size: var(--content);
-    font-weight: var(--content-weight);
-    color: #666;
-    line-height: 1.6;
-    max-width: 460px;
+  font-size: var(--content);
+  font-weight: var(--content-weight);
+  color: #666;
+  line-height: 1.6;
+  max-width: 460px;
 }
 
 .mission-right {
-    flex: 1;
-    position: relative;
+  flex: 1;
+  position: relative;
 }
 
 .timeline-item {
-    display: flex;
-    gap: 40px;
-    position: relative;
-    padding-bottom: 56px;
+  display: flex;
+  gap: 40px;
+  position: relative;
+  padding-bottom: 56px;
 }
 
 /* DOT */
 .timeline-dot {
-    width: clamp(45px, 3.2vw, 44px);
-    height: clamp(45px, 3.2vw, 44px);
-    aspect-ratio: 1 / 1;
+  width: clamp(45px, 3.2vw, 44px);
+  height: clamp(45px, 3.2vw, 44px);
+  aspect-ratio: 1 / 1;
 
-    border-radius: 50%;
-    background-color: #fff;
+  border-radius: 50%;
+  background-color: #fff;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-    font-weight: var(--sub-header-weight);
-    line-height: 1;
-    position: relative;
-    z-index: 2;
+  font-weight: var(--sub-header-weight);
+  line-height: 1;
+  position: relative;
+  z-index: 2;
 }
-
 
 .timeline-dot::after {
-    content: "";
-    position: absolute;
+  content: "";
+  position: absolute;
 
-    top: 100%;
-    left: 50%;
-    transform: translateX(-50%);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
 
-    width: 2px;
-    height: calc(80% + 125px);
+  width: 2px;
+  height: calc(80% + 125px);
 
-    background-color: #e6e6e6;
-    z-index: -1;
+  background-color: #e6e6e6;
+  z-index: -1;
 }
-
 
 .timeline-item:last-child .timeline-dot::after {
-    display: none;
+  display: none;
 }
 
-
-
 .timeline-card {
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 18px 22px;
-    max-width: 420px;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  padding: 18px 22px;
+  max-width: 420px;
 }
 
 .timeline-card h4 {
-    font-size: 18px;
-    font-weight: var(--sub-header-weight);
-    margin-bottom: 6px;
+  font-size: 18px;
+  font-weight: var(--sub-header-weight);
+  margin-bottom: 6px;
 }
 
 .timeline-card p {
-    font-size: 15px;
-    color: #666;
-    line-height: 1.5;
+  font-size: 15px;
+  color: #666;
+  line-height: 1.5;
 }
 
 @media screen and (max-width: 1397px) {
-    .mission-wrap {
-        gap: 40px;
-    }
-
-
+  .mission-wrap {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 768px) {
-    .mission-wrap {
-        flex-direction: column;
-        gap: 40px;
-    }
+  .mission-wrap {
+    flex-direction: column;
+    gap: 40px;
+  }
 
-    .mission-left {
-        position: static;
-        max-width: 100%;
-        padding-bottom: 0px;
-    }
+  .mission-left {
+    position: static;
+    max-width: 100%;
+    padding-bottom: 0px;
+  }
 
-    .mission-left p {
-        max-width: 100%;
-    }
+  .mission-left p {
+    max-width: 100%;
+  }
 
-  
-
-    .timeline-item {
-        gap: 40px;
-    }
+  .timeline-item {
+    gap: 40px;
+  }
 }
 
 @media (max-width: 576px) {
-    .timeline-item {
-        flex-direction: row;
-        gap: 20px;
-    }
+  .timeline-item {
+    flex-direction: row;
+    gap: 20px;
+  }
 
-    .timeline-card {
-        max-width: 100%;
-    }
+  .timeline-card {
+    max-width: 100%;
+  }
 
-     .timeline-dot::after {
-        height: calc(80% + 140px);
-     }
-
+  .timeline-dot::after {
+    height: calc(80% + 140px);
+  }
+  .timeline-dot {
+    font-size: 14px !important;
+  }
 }

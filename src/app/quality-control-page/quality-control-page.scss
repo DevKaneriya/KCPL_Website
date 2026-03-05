@@ -47,7 +47,7 @@
 
 .sub-header {
   color: white;
-  font-size: var(--sub-header);
+  font-size: var(--content);
   font-weight: var(--content-weight);
   width: 60%;
 }
@@ -59,7 +59,7 @@
   padding: 10px 29px;
   color: white;
   background-color: var(--blue);
-  border-radius: 6px;
+  border-radius: 50px;
   border: transparent;
   transition: all 0.5s ease;
   cursor: pointer;
@@ -76,7 +76,7 @@
 /* Mobile */
 @media screen and (max-width: 576px) {
   .main {
-    height: 70vh;
+    height: 80vh;
   }
 
   .sub-header {
@@ -86,9 +86,8 @@
   .button {
     padding: 5px 16px;
     margin-top: 12px;
-    border-radius: 4px;
     font-weight: var(--button-weight);
-    font-size: var(--button)
+    font-size: var(--button);
   }
 
   .button:hover {

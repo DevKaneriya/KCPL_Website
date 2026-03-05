@@ -22,8 +22,8 @@ export class ProductPage {
     this.router.navigate(['product/radiator']);
   }
 
-  navCondensor() {
-    this.router.navigate(['product/condensor']);
+  navCondenser() {
+    this.router.navigate(['product/condenser']);
   }
 
 }

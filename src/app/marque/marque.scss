@@ -1,6 +1,6 @@
 .div-up {
   width: 100%;
-  background-color: #E5E5E5;
+  background-color: #e5e5e5;
   overflow: hidden;
 }
 
@@ -8,6 +8,7 @@
   width: 100%;
   overflow: hidden;
   white-space: nowrap;
+  padding: 40px 0;
 }
 
 .marquee-content {
@@ -19,10 +20,10 @@
 
 .marquee-content span {
   display: inline-block;
-  color: #C6C3C3;
-  font-size: 105px;
+  color: #c6c3c3;
+  font-size: 125px;
   padding: 0 80px;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: 10px;
 }
 
@@ -37,10 +38,9 @@
 }
 
 @media screen and (max-width: 768px) {
-
   .div-up {
     width: 100%;
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
     overflow: hidden;
   }
 
@@ -60,19 +60,18 @@
   .marquee-content span {
     display: inline-block;
 
-    color: #C6C3C3;
+    color: #c6c3c3;
     font-size: 105px;
     padding: 0 80px;
     font-weight: 700;
     letter-spacing: 10px;
   }
-
 }
 
 @media screen and (max-width: 576px) {
   .div-up {
     width: 100%;
-    background-color: #E5E5E5;
+    background-color: #e5e5e5;
     overflow: hidden;
   }
 
@@ -91,15 +90,13 @@
 
   .marquee-content span {
     display: inline-block;
-    color: #C6C3C3;
+    color: #c6c3c3;
     font-size: 45px !important;
     padding: 0 25px !important;
     font-weight: 700;
     letter-spacing: 5px !important;
   }
 }
-
-
 
 @media screen and (max-width: 1397px) {
   .marquee-content span {

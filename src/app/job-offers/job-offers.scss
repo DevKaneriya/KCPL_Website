@@ -1,32 +1,32 @@
 .main {
-    padding: var(--padding);
-    background-color: rgba(245, 245, 245, 1);
+  padding: var(--padding);
+  background-color: rgba(245, 245, 245, 1);
 }
 
 .header {
-    font-size: var(--header);
-    font-weight: var(--header-weight);
-    color: var(--blue);
-    margin-bottom: 30px;
+  font-size: var(--header);
+  font-weight: var(--header-weight);
+  color: var(--blue);
+  margin-bottom: 30px;
 }
 
 .grey {
-    color: grey;
+  color: grey;
 }
 
 .black {
-    color: black;
+  color: black;
 }
 
 .blue {
-   color: var(--blue);
+  color: var(--blue);
 }
 .blue-btn {
   background-color: var(--blue);
   color: white;
   transition: 0.3s;
 }
- 
+
 .blue-btn:hover {
   background-color: white;
   color: var(--blue);
@@ -34,274 +34,258 @@
 }
 
 .cards {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 23px;
-    column-gap: 1%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 23px;
+  column-gap: 1%;
 }
 
 .card {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 49%;
-    background-color: white;
-    padding: 30px 40px;
-    min-height: 340px;
-    border: transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 49%;
+  background-color: white;
+  padding: 30px 40px;
+  min-height: 340px;
+  border: transparent;
 }
 
 .card-title {
-    font-size: var(--sub-header);
-    font-weight: var(--sub-header-weight);
+  font-size: var(--sub-header);
+  font-weight: var(--sub-header-weight);
 }
 
 .card-sub-header {
-    font-size: var(--link);
-    font-weight: var(--link-weight);
-    color: rgba(57, 57, 57, 1);
+  font-size: var(--link);
+  font-weight: var(--link-weight);
+  color: rgba(57, 57, 57, 1);
 }
 
 .card-location {
-    font-size: var(--link);
-    font-weight: var(--link-weight);
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
+  font-size: var(--link);
+  font-weight: var(--link-weight);
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .card-location div {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .card-location .location {
-    height: 18px;
+  height: 18px;
 }
 
 .card-location .time {
-    height: 16px;
+  height: 16px;
 }
 
 .card-content {
-    font-size: var(--content);
-    font-weight: 500;
+  font-size: var(--content);
+  font-weight: 500;
 }
 
 .card-button button {
-    font-size: var(--button);
-    display: inline-block;
-    color: white;
-    border-radius: 6px;
-    background-color: var(--blue);
-    padding: 9px 25px;
-    border: transparent;
-    margin-top: 20px;
-    cursor: pointer;
-    transition: 0.3s ease;
+  font-size: var(--button);
+  display: inline-block;
+  color: white;
+  border-radius: 50px;
+  background-color: var(--blue);
+  padding: 9px 25px;
+  border: transparent;
+  margin-top: 20px;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 .card-button button:hover {
-    transform: scale(1.10);
+  transform: scale(1.1);
 }
 
-
 .upload-button {
-    display: inline-flex;
-    gap: 10px;
-    align-items: center;
-    max-width: 180px;
+  display: inline-flex;
+  gap: 10px;
+  align-items: center;
+  max-width: 180px;
 }
 
 .upload {
-    height: 15px;
+  height: 15px;
 }
 
 .fileName {
+  span {
+    max-width: 270px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-block;
+    vertical-align: middle;
+  }
 
-    span {
-        max-width: 270px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-        display: inline-block;
-        vertical-align: middle;
-    }
-
-    button {
-        font-size: 10px;
-        padding: 0px 3.5px;
-    }
+  button {
+    font-size: 10px;
+    padding: 0px 3.5px;
+  }
 }
 
-
 body {
-    background-color: #f6f0ff;
+  background-color: #f6f0ff;
 }
 
 .modal-card {
-    border: none;
+  border: none;
 }
 
 .form-control:focus {
-    box-shadow: none;
-    border: none;
+  box-shadow: none;
+  border: none;
 }
 
 .modal-header {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .success-message {
-    position: fixed;
-    top: 50px;
-    right: 20px;
-    background: #50A350;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: fadeInOut 3s ease;
-    z-index: 1000;
-    margin-left: 20px;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  background: #50a350;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s ease;
+  z-index: 1000;
+  margin-left: 20px;
 }
 
 .error-toast {
-    position: fixed;
-    top: 50px;
-    right: 20px;
-    background: #BD362F;
-    color: white;
-    padding: 15px 25px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-    animation: fadeInOut 3s ease;
-    z-index: 100000;
-    margin-left: 20px;
+  position: fixed;
+  top: 50px;
+  right: 20px;
+  background: #bd362f;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  animation: fadeInOut 3s ease;
+  z-index: 100000;
+  margin-left: 20px;
 }
 
-
-
-
-
-
 .skeleton-wrapper {
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    row-gap: 23px;
-    column-gap: 1%;
-    width: 100%;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 23px;
+  column-gap: 1%;
+  width: 100%;
 }
 
 .skeleton-card {
-    width: 49%;
-    min-height: 340px;
-    border-radius: 6px;
+  width: 49%;
+  min-height: 340px;
+  border-radius: 6px;
 }
 
 /* Skeleton loading effect */
 .sl_effect {
-    background: linear-gradient(90deg,
-            #e4e4e4 25%,
-            #ededed 50%,
-            #e4e4e4 75%);
-    background-size: 200% 100%;
-    animation: sl_loading 3s linear infinite;
+  background: linear-gradient(90deg, #e4e4e4 25%, #ededed 50%, #e4e4e4 75%);
+  background-size: 200% 100%;
+  animation: sl_loading 3s linear infinite;
 }
 
 /* Animation */
 @keyframes sl_loading {
-    0% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: 200% 0;
+  }
 
-    100% {
-        background-position: -200% 0;
-    }
+  100% {
+    background-position: -200% 0;
+  }
 }
 
-
-
-
 @media screen and (max-width: 576px) {
+  .main {
+    padding: var(--padding);
+    background-color: rgba(245, 245, 245, 1);
+  }
 
-    .main {
-        padding: var(--padding);
-        background-color: rgba(245, 245, 245, 1);
-    }
+  .header {
+    font-size: var(--header);
+    color: var(--blue);
+    margin-bottom: 30px;
+  }
 
-    .header {
-        font-size: var(--header);
-        color: var(--blue);
-        margin-bottom: 30px;
-    }
+  .cards {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    row-gap: 23px;
+    column-gap: 0;
+  }
 
-    .cards {
-        display: flex;
-        align-items: center;
-        flex-wrap: wrap;
-        row-gap: 23px;
-        column-gap: 0;
-    }
+  .card {
+    width: 100%;
+    background-color: white;
+    padding: 20px 25px;
+    min-height: 250px;
+  }
 
-    .card {
-        width: 100%;
-        background-color: white;
-        padding: 20px 25px;
-        min-height: 250px;
-    }
+  .card-title {
+    font-size: var(--sub-header);
+  }
 
-    .card-title {
-        font-size: var(--sub-header);
-    }
+  .card-sub-header {
+    font-size: var(--link);
+    color: rgba(57, 57, 57, 1);
+  }
 
-    .card-sub-header {
-        font-size: var(--link);
-        color: rgba(57, 57, 57, 1);
-    }
+  .card-location {
+    font-size: var(--link);
+    margin: 15px 0;
+  }
 
-    .card-location {
-        font-size: var(--link);
-        margin: 15px 0;
-    }
+  .card-location div {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
 
-    .card-location div {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-    }
+  .card-location .location {
+    height: 16px;
+  }
 
-    .card-location .location {
-        height: 16px;
-    }
+  .card-location .time {
+    height: 14px;
+  }
 
-    .card-location .time {
-        height: 14px;
-    }
+  .card-content {
+    font-size: var(--content);
+  }
 
-    .card-content {
-        font-size: var(--content);
-    }
+  .card-button button {
+    display: inline-block;
+    color: white;
+    font-size: var(--button);
+    border-radius: 5px;
+    padding: 8px 22px;
+    border: transparent;
+    margin-top: 20px;
+    cursor: pointer;
+  }
 
-    .card-button button {
-        display: inline-block;
-        color: white;
-        font-size: var(--button);
-        border-radius: 5px;
-        padding: 8px 22px;
-        border: transparent;
-        margin-top: 20px;
-        cursor: pointer;
-    }
-
-    .skeleton-card {
-        width: 100%;
-        min-height: 280px;
-        border-radius: 12px;
-    }
-
+  .skeleton-card {
+    width: 100%;
+    min-height: 280px;
+    border-radius: 12px;
+  }
 }

@@ -14,8 +14,7 @@
             </ng-container>
 
             <ng-container *ngIf="!isLoading">
-                <div class="card-item" *ngFor="let product of condensorProducts"
-                   routerLink='/product/condensor';>
+                <div class="card-item" *ngFor="let product of condenserProducts" routerLink='/product/condenser' ;>
                     <div class="card-img">
                         <img [src]="product.image_url" [alt]="product.title" referrerpolicy="no-referrer" />
                     </div>
@@ -33,7 +32,7 @@
 
                         <div class="card-footer">
                             <img src="assets/images/Products/products-arrow.svg" alt="" referrerpolicy="no-referrer"
-                                routerLink='/product/condensor' />
+                                routerLink='/product/condenser' />
                         </div>
                     </div>
                 </div>

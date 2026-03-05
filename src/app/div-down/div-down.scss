@@ -36,8 +36,6 @@
   display: none;
 }
 
-
-
 .grey {
   color: grey;
 }
@@ -59,7 +57,7 @@
 }
 
 .div-down a:hover {
- color: var(--blue);
+  color: var(--blue);
 }
 
 .down-image {
@@ -73,17 +71,12 @@
   z-index: 999;
   height: auto;
   width: 90%;
-  top: -38%;
+  top: -25%;
   right: 10%;
   max-width: 500px;
 }
 
-
-
-
-
 @media screen and (max-width: 576px) {
-
   .div-down {
     padding: var(--padding);
     gap: 0;
@@ -125,7 +118,6 @@
     cursor: pointer;
   }
 
-
   .down-image {
     position: relative;
     width: 125px;
@@ -151,7 +143,6 @@
     right: 0%;
   }
 }
-
 
 // @media screen and (max-width: 1229px) {
 

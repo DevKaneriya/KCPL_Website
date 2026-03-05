@@ -29,7 +29,12 @@ export class Application {
       content: 'High-performance radiators and condensers designed to keep passenger vehicles running cool in every condition.'
     },
     {
-      name: 'Mining and Construction Equipment’s',
+      name: 'Mining and Construction',
+      image: '/assets/images/Home/mining.png',
+      content: 'Rugged Thermal Solutions Designed For Mining And Construction Equipment Operating In The Hardest Conditions.'
+    },
+    {
+      name: 'Equipments',
       image: '/assets/images/Home/mining.png',
       content: 'Rugged thermal solutions designed for mining and construction equipment operating in the harshest conditions.'
     },

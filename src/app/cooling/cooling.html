@@ -1,23 +1,23 @@
 <div class="main">
     <div #revealH1 class="header">
-    <ng-container *ngFor="let word of letters; let i = index">
-      <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
-        [class.blue]="i < revealedCount && word.isBlue">
-        {{ word.word }}
-      </span>
-    </ng-container>
-  </div>
+        <ng-container *ngFor="let word of letters; let i = index">
+            <span [class.grey]="i >= revealedCount" [class.black]="i < revealedCount && !word.isBlue"
+                [class.blue]="i < revealedCount && word.isBlue">
+                {{ word.word }}
+            </span>
+        </ng-container>
+    </div>
     <div class="middle">
         <div class="image" routerLink='/product/radiator'>
             <div class="head">
                 <div class="bold">
                     Radiators
                 </div>
-                <div class="light" >
+                <div class="light">
                     Engineered Heat Control
                 </div>
             </div>
-            <div class="img-div" >
+            <div class="img-div">
                 <img class="img-left" src="assets/images/Home/Radiators.png" alt="">
             </div>
             <div>
@@ -26,14 +26,14 @@
         </div>
         <div class="image" routerLink='/product/condenser'>
             <div class="head">
-                <div class="bold" >
+                <div class="bold">
                     Condensers
                 </div>
-                <div class="light" >
+                <div class="light">
                     Efficient Air Cooling
                 </div>
             </div>
-            <div class="img-div" >
+            <div class="img-div">
                 <img class="img-right" src="assets/images/Home/Condensers.png" alt="">
             </div>
             <div>
@@ -42,16 +42,17 @@
         </div>
     </div>
     <div class="footer" routerLink="/products">
-        <div class="text" >
-            Performance-built radiators and condensers for every climate
+        <div class="text">
+            Performance-Built Radiators And Condensers For Every Climate
         </div>
         <div class="button">
-            <button >
+            <button>
                 <span>See Our Solutions</span>
                 <svg width="14" height="6" viewBox="0 0 14 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M9.43084 5.22C9.55084 4.908 9.68284 4.62 9.82684 4.356C9.97084 4.08 10.1328 3.822 10.3128 3.582H0.664844V2.106H10.3128C10.1448 1.866 9.98884 1.614 9.84484 1.35C9.70084 1.074 9.56884 0.78 9.44884 0.467999H10.8168C11.5608 1.344 12.3768 2.01 13.2648 2.466V3.24C12.3768 3.672 11.5608 4.332 10.8168 5.22H9.43084Z"/>
+                    <path
+                        d="M9.43084 5.22C9.55084 4.908 9.68284 4.62 9.82684 4.356C9.97084 4.08 10.1328 3.822 10.3128 3.582H0.664844V2.106H10.3128C10.1448 1.866 9.98884 1.614 9.84484 1.35C9.70084 1.074 9.56884 0.78 9.44884 0.467999H10.8168C11.5608 1.344 12.3768 2.01 13.2648 2.466V3.24C12.3768 3.672 11.5608 4.332 10.8168 5.22H9.43084Z" />
                 </svg>
             </button>
         </div>
     </div>
-</div> 
+</div>

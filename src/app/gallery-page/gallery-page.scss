@@ -29,14 +29,14 @@
   background-color: rgba(245, 245, 245, 1);
   display: flex;
   justify-content: space-evenly;
-  border-radius: 10px;
+  border-radius: 50px;
   padding: 10px 30px;
   margin: 20px;
   gap: 15px;
 
   button {
     padding: 5px 20px;
-    border-radius: 7px;
+    border-radius: 50px;
     font-size: var(--button);
     font-weight: var(--button-weight);
     border: none;
@@ -46,13 +46,13 @@
     transition: background-color 0.3s;
     min-width: 90px;
     &.active {
-      background-color:var(--blue);
+      background-color: var(--blue);
       color: white;
     }
   }
 
   button:hover {
-    background-color:var(--blue);
+    background-color: var(--blue);
     color: white;
   }
 }
@@ -84,9 +84,6 @@
   }
 }
 
-
-
-
 .skeleton-filter-buttons {
   width: 420px;
   height: 55px;
@@ -111,10 +108,7 @@
 
 /* Skeleton loading effect */
 .sl_effect {
-  background: linear-gradient(90deg,
-      #f0f0f0 25%,
-      #e0e0e0 50%,
-      #f0f0f0 75%);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
   background-size: 200% 100%;
   animation: sl_loading 2.5s linear infinite;
 }
@@ -129,10 +123,6 @@
     background-position: -200% 0;
   }
 }
-
-
-
-
 
 @media (max-width: 576px) {
   .content {
