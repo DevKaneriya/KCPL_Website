@@ -1,10 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap");
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    list-style: none;
-    font-family: Helvetica, sans-serif;
-    line-height: 1.2;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  list-style: none;
+  font-family: "Google Sans Flex", sans-serif;
+  line-height: 1.2;
 }
 
 h1,
@@ -13,35 +14,34 @@ h3,
 h4,
 h5,
 h6 {
-    line-height: 1;
+  line-height: 1;
 }
 
 p {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 :root {
-    --header: 46px;
-    --header-weight: 600;
+  --header: 46px;
+  --header-weight: 600;
 
-    --content: 19px;
-    --content-weight: 500;
+  --content: 19px;
+  --content-weight: 500;
 
-    --sub-header: 24px;
-    --sub-header-weight: 600;
+  --sub-header: 24px;
+  --sub-header-weight: 600;
 
-    --button: 17px;
-    --button-weight: 500;
+  --button: 17px;
+  --button-weight: 500;
 
-    --link: 15px;
-    --link-weight: 500;
+  --link: 15px;
+  --link-weight: 500;
 
-    --padding: 80px 80px;
+  --padding: 80px 80px;
 
-    --blue:#249ed1;
-    --dark: #12477d;
+  --blue: #249ed1;
+  --dark: #12477d;
 }
-
 
 // @media screen and (max-width: 1397px) {
 
@@ -55,7 +55,6 @@ p {
 //     }
 // }
 
-
 // @media screen and (max-width: 1229px) {
 
 //     :root {
@@ -68,38 +67,33 @@ p {
 //     }
 // }
 
-@media(max-width: 1224px) {
-
-    :root {
-        --header: 27px;
-        --content: 16px;
-        --sub-header: 20px;
-        --button: 14px;
-        --link: 15px;
-    }
-
+@media (max-width: 1224px) {
+  :root {
+    --header: 27px;
+    --content: 16px;
+    --sub-header: 20px;
+    --button: 14px;
+    --link: 15px;
+  }
 }
 
+@media (max-width: 576px) {
+  :root {
+    --header: 24px;
+    --header-weight: 600;
 
-@media(max-width: 576px) {
+    --content: 15px;
+    --content-weight: 500;
 
-    :root {
-        --header: 24px;
-        --header-weight: 600;
+    --sub-header: 20px;
+    --sub-header-weight: 600;
 
-        --content: 15px;
-        --content-weight: 500;
+    --button: 13px;
+    --button-weight: 500;
 
-        --sub-header: 20px;
-        --sub-header-weight: 600;
+    --link: 12px;
+    --link-weight: 500;
 
-        --button: 13px;
-        --button-weight: 500;
-
-        --link: 12px;
-        --link-weight: 500;
-
-        --padding: 40px 25px;
-    }
-
+    --padding: 40px 25px;
+  }
 }

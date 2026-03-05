@@ -17,10 +17,10 @@ import { Footer } from "../footer/footer";
 import { PdpRadiatorFeatures } from "../pdp-radiator-features/pdp-radiator-features";
 import { PdpRadiatorDifference } from "../pdp-radiator-difference/pdp-radiator-difference";
 import { RadiatorCarousel } from "../radiator-carousel/radiator-carousel";
-
+import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-pdp-radiator',
-  imports: [PdpradiatorWorkHardest, PdpradiatorSystemEfficiency, Application, ReachOut, Footer, PdpRadiatorFeatures, PdpRadiatorDifference, RadiatorCarousel],
+  imports: [PdpradiatorWorkHardest, PdpradiatorSystemEfficiency, Application, ReachOut, Footer, PdpRadiatorFeatures, PdpRadiatorDifference, RadiatorCarousel, RouterLink],
   templateUrl: './pdp-radiator.html',
   styleUrl: './pdp-radiator.scss'
 })

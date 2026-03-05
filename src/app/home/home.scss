@@ -1,138 +1,130 @@
 .home-header {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 0;
+
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.overlay {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.43);
+}
+
+.padding {
+  height: 100%;
+  padding: 80px 60px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.padding h1 {
+  color: white;
+  font-weight: var(--header-weight);
+  font-size: 60px;
+}
+
+.home-flex {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  text-align: right;
+}
+
+.home-header h2 {
+  color: white;
+  font-weight: var(--header-weight);
+  font-size: 55px;
+  max-width: 350px;
+}
+
+.button {
+  font-weight: var(--button-weight);
+  font-size: 19px;
+  padding: 10px 29px;
+  color: white;
+  background-color: var(--blue);
+  align-content: center;
+  border-radius: 50px;
+  border: transparent;
+  transition: all 0.5s ease;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+.button:hover {
+  transform: scale(1.05);
+  background-color: white;
+  color: var(--blue);
+}
+
+@media screen and (max-width: 576px) {
+  .home-header {
     position: relative;
     height: 100vh;
     width: 100%;
     overflow: hidden;
-}
+  }
 
-.bg-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    min-width: 100%;
-    min-height: 100%;
-    transform: translate(-50%, -50%);
-    object-fit: cover;
-    z-index: 0;
-
-    will-change: transform;
-    backface-visibility: hidden;
-}
-
-.overlay {
-    position: relative;
-    z-index: 1;
+  .padding {
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.43);
-}
-
-.padding {
-    height: 100%;
-    padding: 80px 60px 0;
+    padding: var(--padding) !important;
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-}
+    justify-content: space-around;
+  }
 
-.padding h1 {
-    color: white;
+  .padding h1 {
+    margin-top: 40px;
     font-weight: var(--header-weight);
-    font-size: 60px;
-}
+    font-size: 24px !important;
+    width: 90%;
+  }
 
-.home-flex {
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-    text-align: right;
-}
+  .home-flex {
+    text-align: start;
+    align-items: start;
+  }
 
-.home-header h2 {
-    color: white;
-    font-weight: var(--header-weight);
-    font-size: 55px;
-    max-width: 350px;
-}
+  .home-header h2 {
+    font-weight: var(--sub-header-weight);
+    font-size: 22px !important;
+  }
 
-.button {
+  .button {
     font-weight: var(--button-weight);
-    font-size: 19px;
-    padding: 10px 29px;
-    color: white;
+    font-size: var(--button) !important;
+    padding: 5px 16px !important;
+    margin-top: 10px !important;
+    border-radius: 4px;
+  }
+
+  .button:hover {
+    transform: scale(1);
     background-color: var(--blue);
-    align-content: center;
-    border-radius: 6px;
-    border: transparent;
-    transition: all 0.5s ease;
-    cursor: pointer;
-    margin-top: 30px;
+    color: white;
+  }
+
+  .bg-video {
+    object-position: center;
+  }
 }
-
-.button:hover {
-    transform: scale(1.05);
-    background-color: white;
-    color: var(--blue);
-}
-
-
-
-
-
-@media screen and (max-width: 576px) {
-
-    .home-header {
-        position: relative;
-        height: 38vh;
-        width: 100%;
-        overflow: hidden;
-    }
-
-    .padding {
-        height: 100%;
-        padding: var(--padding) !important;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-    }
-
-    .padding h1 {
-        margin-top: 40px;
-        font-weight: var(--header-weight);
-        font-size: 24px !important;
-        width: 90%;
-    }
-
-    .home-flex {
-        text-align: start;
-        align-items: start;
-    }
-
-    .home-header h2 {
-        font-weight: var(--sub-header-weight);
-        font-size: 22px !important;
-    }
-
-    .button {
-        font-weight: var(--button-weight);
-        font-size: var(--button) !important;
-        padding: 5px 14px !important;
-        margin-top: 10px !important;
-        border-radius: 4px;
-    }
-
-    .button:hover {
-        transform: scale(1);
-        background-color: var(--blue);
-        color: white;
-    }
-
-    .bg-video {
-        object-position: center;
-    }
-
-}
-
-
 
 // @media screen and (max-width: 1397px) {
 //     .padding {

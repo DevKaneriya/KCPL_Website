@@ -32,7 +32,7 @@ export class WorkWithYou {
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    const blackText = "We'd Love to Work With You";
+    const blackText = "We'd Love To Work With You";
     const blueText = '';
     const reblackText = '';
 

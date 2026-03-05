@@ -33,7 +33,7 @@ export class WarehouseModernManufacturing {
   constructor(private cdr: ChangeDetectorRef) { }
 
   ngOnInit(): void {
-    const blackText = 'Built for Modern';
+    const blackText = 'Built For Modern';
     const blueText = 'Manufacturing';
     const reblackText = '';
 

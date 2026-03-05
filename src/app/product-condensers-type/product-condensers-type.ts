@@ -11,7 +11,7 @@ import { RouterLink } from "@angular/router";
 })
 export class ProductCondensersType {
 
-  condensorProducts: any[] = [];
+  condenserProducts: any[] = [];
   isLoading = true;
 
   constructor(private appData: Globalservice) {
@@ -25,7 +25,7 @@ export class ProductCondensersType {
         return;
 
       /* filter by category */
-      this.condensorProducts =
+      this.condenserProducts =
         allProducts.filter(
           (p: ProductItem) =>
             p.category === 'condenser'

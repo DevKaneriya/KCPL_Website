@@ -9,7 +9,7 @@ import {
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { PdpcondensorWorkHardest } from "../pdpcondensor-work-hardest/pdpcondensor-work-hardest";
+import { PdpcondenserWorkHardest } from "../pdpcondenser-work-hardest/pdpcondenser-work-hardest";
 import { PdpcondenserSystemEfficiency } from "../pdpcondenser-system-efficiency/pdpcondenser-system-efficiency";
 import { ReachOut } from "../reach-out/reach-out";
 import { Application } from "../application/application";
@@ -20,7 +20,7 @@ import { CondenserCarousel } from "../condenser-carousel/condenser-carousel";
 
 @Component({
   selector: 'app-pdp-condenser',
-  imports: [PdpcondensorWorkHardest, PdpcondenserSystemEfficiency, ReachOut, Application, Footer, PdpCondenserDifference, PdpCondenserFeatures, CondenserCarousel],
+  imports: [PdpcondenserWorkHardest, PdpcondenserSystemEfficiency, ReachOut, Application, Footer, PdpCondenserDifference, PdpCondenserFeatures, CondenserCarousel,],
   templateUrl: './pdp-condenser.html',
   styleUrl: './pdp-condenser.scss'
 })

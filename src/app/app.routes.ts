@@ -22,7 +22,7 @@ export const routes: Routes = [
     { path: 'industrial/manufacturing', component: ManufacturingPage, data: { transparentHeader: true } },
     { path: 'products', component: ProductPage, data: { transparentHeader: false } },
     { path: 'product/radiator', component: PdpRadiator, data: { transparentHeader: false } },
-    { path: 'product/condensor', component: PdpCondenser, data: { transparentHeader: false } },
+    { path: 'product/condenser', component: PdpCondenser, data: { transparentHeader: false } },
     { path: 'career', component: Career, data: { transparentHeader: false } },
     { path: 'contact', component: ContactPage, data: { transparentHeader: false } },
     { path: 'gallery', component: GalleryPage, data: { transparentHeader: false } },

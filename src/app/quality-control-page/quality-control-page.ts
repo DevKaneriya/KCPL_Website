@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, ElementRef } from '@angular/core';
 import { QualityPhilosophy } from "../quality-philosophy/quality-philosophy";
 import { QualityCertifiedQuality } from "../quality-certified-quality/quality-certified-quality";
 import { Marque } from "../marque/marque";
@@ -24,4 +24,24 @@ import { RouterLink } from '@angular/router';
   templateUrl: './quality-control-page.html',
   styleUrl: './quality-control-page.scss'
 })
-export class QualityControlPage {}
+export class QualityControlPage {
+
+  @ViewChild('bgVideo') bgVideo!: ElementRef<HTMLVideoElement>;
+
+  ngAfterViewInit() {
+    const video = this.bgVideo.nativeElement;
+
+    video.muted = true;
+    video.volume = 0;
+
+    // Force reload + play
+    video.load();
+
+    const playPromise = video.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(() => {
+      });
+    }
+  }
+
+}

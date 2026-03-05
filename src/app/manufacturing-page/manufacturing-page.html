@@ -1,7 +1,7 @@
 <div class="main">
 
     <!-- Background Video -->
-    <video class="bg-video" autoplay muted loop playsinline preload="auto">
+    <video #bgVideo class="bg-video" muted loop playsinline autoplay preload="auto">
         <source src="assets/images/Manufacture/manufacturing-main.mp4" type="video/mp4">
     </video>
 
@@ -10,14 +10,15 @@
 
     <!-- Dynamic Content -->
     <div class="content">
-        <h1 class="header">{{ slides[currentSlide].title }}</h1>
+        <h1 class="header">Manufacturing Excellence</h1>
 
         <p class="sub-header">
-            {{ slides[currentSlide].description }}
+            With decades of expertise in heat exchanger manufacturing, we combine robust technology, precision
+            engineering, and strict quality controls to deliver reliable, high-performance solutions at scale.
         </p>
 
         <button class="button" (click)="scrollToQualitySystems()">
-            {{ slides[currentSlide].buttonText }}
+            Inside Our Manufacturing
         </button>
     </div>
 

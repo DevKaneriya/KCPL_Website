@@ -1,296 +1,278 @@
 .main {
-    padding: 80px 15px;
+  padding: 80px 15px;
 }
 
 .header {
-    padding: 0 85px;
-    font-size: var(--header);
-    font-weight: var(--header-weight);
+  padding: 0 85px;
+  font-size: var(--header);
+  font-weight: var(--header-weight);
 }
 
 .grey {
-    color: grey;
+  color: grey;
 }
 
 .black {
-    color: black;
+  color: black;
 }
 
 .blue {
-   color: var(--blue);
+  color: var(--blue);
 }
 
 .cards {
-    display: flex;
-    justify-content: left;
-    padding: 50px 80px 0;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: left;
+  padding: 50px 80px 0;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .card {
-    border: 2px solid #DDDDDD;
-    border-radius: 15px;
-    width: 30%;
-    min-width: 340px;
-    min-height: 500px;
-    height: max-content;
-    overflow: hidden;
-    cursor: pointer;
+  border: 2px solid #dddddd;
+  border-radius: 15px;
+  width: 30%;
+  min-width: 340px;
+  min-height: 500px;
+  height: max-content;
+  overflow: hidden;
+  cursor: pointer;
 }
 
 .card img {
-    height: 260px;
-    width: 100%;
-    border-radius: 12px 12px 0 0;
-    object-fit: cover;
+  height: 260px;
+  width: 100%;
+  border-radius: 12px 12px 0 0;
+  object-fit: cover;
 }
 
 .padding {
-    padding: 30px 20px;
+  padding: 30px 20px;
 }
 
 .card-head {
-    font-size: 22px;
-    font-weight: var(--sub-header-weight);
+  font-size: 22px;
+  font-weight: var(--sub-header-weight);
 }
 
 .card-content {
-    font-size: var(--link);
-    font-weight: var(--content-weight);
-    margin: 25px 0;
-    height: 70px;
+  font-size: var(--link);
+  font-weight: var(--content-weight);
+  margin: 25px 0;
+  height: 70px;
 
-    p {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 3;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
+  p {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 }
 
 .card-foot a {
-    font-size: var(--link);
-   color: var(--blue);
-    text-decoration: underline;
-    transition: 0.4s ease;
-    cursor: pointer;
+  font-size: var(--link);
+  color: var(--blue);
+  text-decoration: underline;
+  transition: 0.4s ease;
+  cursor: pointer;
 }
 
 .card-foot a:hover {
-    color: black;
+  color: black;
 }
 
 .view-more {
-    display: flex;
-    justify-content: center;
-    margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
 
-    button {
-        font-weight: var(--button-weight);
-        font-size: var(--button);
-        padding: 7px 25px;
-        background-color: white;
-        align-content: center;
-        border-radius: 5px;
-        border: 1px solid var(--blue);
-        transition: all 0.5s ease;
-        cursor: pointer;
-        color: var(--blue);
-    }
+  button {
+    font-weight: var(--button-weight);
+    font-size: var(--button);
+    padding: 7px 25px;
+    background-color: white;
+    align-content: center;
+    border-radius: 50px;
+    border: 1px solid var(--blue);
+    transition: all 0.5s ease;
+    cursor: pointer;
+    color: var(--blue);
+  }
 
-    button:hover {
-        background-color: var(--blue);
-        color: white;
-    }
+  button:hover {
+    background-color: var(--blue);
+    color: white;
+  }
 }
 
-
 .skeleton-wrapper {
-    display: flex;
-    justify-content: left;
-    padding: 50px 80px 0;
-    gap: 40px;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: left;
+  padding: 50px 80px 0;
+  gap: 40px;
+  flex-wrap: wrap;
 }
 
 .skeleton-card {
-    border-radius: 15px;
-    width: 30%;
-    min-width: 340px;
-    height: 500px;
-    overflow: hidden;
+  border-radius: 15px;
+  width: 30%;
+  min-width: 340px;
+  height: 500px;
+  overflow: hidden;
 }
 
 /* Skeleton loading effect */
 .sl_effect {
-    background: linear-gradient(90deg,
-            #f0f0f0 25%,
-            #e0e0e0 50%,
-            #f0f0f0 75%);
-    background-size: 200% 100%;
-    animation: sl_loading 2.5s linear infinite;
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: sl_loading 2.5s linear infinite;
 }
 
 @keyframes sl_loading {
-    0% {
-        background-position: 200% 0;
-    }
+  0% {
+    background-position: 200% 0;
+  }
 
-    100% {
-        background-position: -200% 0;
-    }
+  100% {
+    background-position: -200% 0;
+  }
 }
-
-
-
 
 @media screen and (max-width: 1240px) {
-    .card {
-        min-height: 490px;
-    }
+  .card {
+    min-height: 490px;
+  }
 }
-
-
-
-
 
 @media screen and (max-width: 576px) {
+  .main {
+    padding: var(--padding) !important;
+  }
 
-    .main {
-        padding: var(--padding) !important;
+  .header {
+    padding: 0px 0px 20px;
+    font-size: var(--header) !important;
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0px;
+  }
+
+  .card {
+    width: 100%;
+    min-width: 300px;
+    min-height: max-content;
+  }
+
+  .card img {
+    height: 195px;
+    width: 100%;
+  }
+
+  .card-head {
+    font-size: 17px !important;
+  }
+
+  .card-content {
+    font-size: var(--link) !important;
+    margin: 15px 0;
+    height: max-content;
+  }
+
+  .card-foot a {
+    font-size: var(--link);
+    color: var(--blue);
+    text-decoration: underline;
+    transition: 0.4s ease;
+    cursor: pointer;
+  }
+
+  .card-foot a:hover {
+    color: var(--blue);
+  }
+
+  .view-more {
+    margin-top: 30px;
+
+    button {
+      font-size: var(--button);
+      padding: 6px 20px;
+      background-color: white;
+      align-content: center;
+      border-radius: 8px;
+      transition: all 0.5s ease;
+      cursor: pointer;
     }
+  }
 
-    .header {
-        padding: 0px 0px 20px;
-        font-size: var(--header) !important;
-    }
+  .skeleton-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0px;
+  }
 
-    .cards {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding: 0px;
-     
-    }
-
-    .card {
-        width: 100%;
-        min-width: 300px;
-        min-height: max-content;
-    }
-
-    .card img {
-        height: 195px;
-        width: 100%;
-    }
-
-    .card-head {
-        font-size: 17px !important;
-    }
-
-    .card-content {
-        font-size: var(--link) !important;
-        margin: 15px 0;
-        height: max-content;
-
-    }
-
-    .card-foot a {
-        font-size: var(--link);
-        color: var(--blue);
-        text-decoration: underline;
-        transition: 0.4s ease;
-        cursor: pointer;
-    }
-
-    .card-foot a:hover {
-        color: var(--blue);
-    }
-
-    .view-more {
-        margin-top: 30px;
-
-        button {
-            font-size: var(--button);
-            padding: 6px 20px;
-            background-color: white;
-            align-content: center;
-            border-radius: 8px;
-            transition: all 0.5s ease;
-            cursor: pointer;
-        }
-
-
-    }
-
-    .skeleton-wrapper {
-        display: flex;
-        flex-direction: column;
-        gap: 25px;
-        padding: 0px;
-    }
-
-    .skeleton-card {
-        width: 100%;
-        min-width: 300px;
-        height: 400px;
-    }
-
+  .skeleton-card {
+    width: 100%;
+    min-width: 300px;
+    height: 400px;
+  }
 }
 
-
 @media screen and (max-width: 1397px) {
-    .main {
-        padding: 42px 33px;
-    }
+  .main {
+    padding: 42px 33px;
+  }
 
-    .header {
-        /* margin: 0 88px; */
-        font-size: 46px;
-    }
+  .header {
+    /* margin: 0 88px; */
+    font-size: 46px;
+  }
 
-    .padding {
-        padding: 26px;
-    }
+  .padding {
+    padding: 26px;
+  }
 
-    .card-head {
-        font-size: 20px;
-    }
+  .card-head {
+    font-size: 20px;
+  }
 
-    .card-content {
-        font-size: 15px;
-    }
+  .card-content {
+    font-size: 15px;
+  }
 
-    .card-foot a {
-        font-size: 14px;
-    }
+  .card-foot a {
+    font-size: 14px;
+  }
 }
 
 @media screen and (max-width: 1229px) {
-    .main {
-        padding: 35px 27px;
-    }
+  .main {
+    padding: 35px 27px;
+  }
 
-    .header {
-        /* margin: 0 94px; */
-        font-size: 40px;
-    }
+  .header {
+    /* margin: 0 94px; */
+    font-size: 40px;
+  }
 
-    .padding {
-        padding: 20px;
-    }
+  .padding {
+    padding: 20px;
+  }
 
-    .card-head {
-        font-size: 17px;
-    }
+  .card-head {
+    font-size: 17px;
+  }
 
-    .card-content {
-        font-size: 14px;
-    }
+  .card-content {
+    font-size: 14px;
+  }
 
-    .card-foot a {
-        font-size: 13px;
-    }
+  .card-foot a {
+    font-size: 13px;
+  }
 }
