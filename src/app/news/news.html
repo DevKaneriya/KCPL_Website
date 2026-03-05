@@ -16,11 +16,17 @@
 
             <div class="card" *ngFor="let blog of blogs" (click)="goToBlog(blog.slug)">
 
-                <img referrerpolicy="no-referrer" [src]="blog.cover_image" alt="">
+                <div class="image">
+                    <img referrerpolicy="no-referrer" [src]="blog.cover_image" alt="">
+                </div>
 
                 <div class="padding">
                     <div class="card-head">
                         <p>{{ blog.title }}</p>
+                    </div>
+
+                    <div class="card-author">
+                        <p><span style="color: #6a6a6a;">Written by</span> {{ blog.author }}</p>
                     </div>
 
                     <div class="card-content">

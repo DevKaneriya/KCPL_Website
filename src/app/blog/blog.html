@@ -5,9 +5,11 @@
 
     <div class="cards" *ngIf="!loading">
 
-        <div class="card" (click)="goToBlog(blog.slug)" *ngFor="let blog of blogs" >
+        <div class="card" (click)="goToBlog(blog.slug)" *ngFor="let blog of blogs">
 
-            <img referrerpolicy="no-referrer" [src]="blog.cover_image" alt="">
+            <div class="image">
+                <img referrerpolicy="no-referrer" [src]="blog.cover_image" alt="">
+            </div>
 
             <div class="padding">
                 <div class="card-head">
@@ -39,5 +41,5 @@
 </div>
 
 
- 
+
 <app-footer></app-footer>

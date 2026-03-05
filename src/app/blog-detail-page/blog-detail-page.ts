@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { Blogservice } from '../../services/blogservice';
 import { CommonModule } from '@angular/common';
 import { ReachOut } from "../reach-out/reach-out";
 import { Footer } from "../footer/footer";
 import { News } from "../news/news";
+import { Globalservice } from '../../services/globalservice';
 
 
 @Component({
@@ -23,11 +23,13 @@ export class BlogDetailPage {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private blogService: Blogservice
-  ) {}
+    public global: Globalservice
+  ) { }
 
   ngOnInit() {
+
     this.route.paramMap.subscribe(params => {
+
       const slug = params.get('slug');
 
       if (!slug) {
@@ -36,23 +38,48 @@ export class BlogDetailPage {
         return;
       }
 
-      this.loading = true;
-      this.blogService.getBlogDetail(slug)
-        .then(res => {
-          if (!res || res.error) {
-            this.error = true;
-            this.blog = null;
-          } else {
-            this.blog = res;
-          }
-          this.loading = false;
-        })
-        .catch(() => {
-          this.error = true;
-          this.loading = false;
-        });
+      this.loadBlog(slug);
+
     });
+
   }
+
+
+
+  private loadBlog(slug: string) {
+
+    const checkBlog = () => {
+
+      const blogs =
+        this.global.blogDetails();
+
+      if (!blogs || blogs.length === 0) {
+
+        if (this.global.loading()) {
+          setTimeout(checkBlog, 50);
+          return;
+        }
+
+      }
+
+      const blog =
+        blogs.find(b => b.slug === slug);
+
+      if (!blog) {
+        this.error = true;
+        this.blog = null;
+      } else {
+        this.blog = blog;
+      }
+
+      this.loading = false;
+
+    };
+
+    checkBlog();
+
+  }
+
 }
 
 

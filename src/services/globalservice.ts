@@ -12,12 +12,14 @@ import { environment } from '../environments/environment';
   providedIn: 'root'
 })
 export class Globalservice {
-  
+
   /* ---------- GLOBAL SIGNAL STORES ---------- */
 
   products = signal<any[]>([]);
   blogs = signal<any[]>([]);
   jobs = signal<any[]>([]);
+  blogDetails = signal<any[]>([]);
+  galleryImages = signal<any[]>([]);
 
   loading = signal(true);
 
@@ -32,7 +34,7 @@ export class Globalservice {
     private productsService: Product,
     private blogsService: Blogservice,
     private jobsService: Career
-  ) {}
+  ) { }
 
 
 
@@ -44,14 +46,12 @@ export class Globalservice {
 
     try {
 
-      /* ✅ CALL VERSIONS API DIRECTLY */
-      const serverVersions:any =
+      const serverVersions: any =
         await firstValueFrom(
           this.http.get(
             `${environment.apiUrl}?route=versions`
           )
         );
-
 
       const cache =
         this.getCache();
@@ -65,19 +65,26 @@ export class Globalservice {
         ),
 
         this.loadBlogs(
-          serverVersions.blogs_list,
+          serverVersions.blogs,
           cache
         ),
 
         this.loadJobs(
           serverVersions.jobs,
           cache
-        )
+        ),
+
+        this.loadGallery()
 
       ]);
 
+      await this.loadBlogDetails(
+        serverVersions.blogs,
+        cache
+      );
+
     }
-    catch(err){
+    catch (err) {
 
       console.error(
         "Preload failed",
@@ -93,18 +100,107 @@ export class Globalservice {
 
 
   /* =====================================================
+     GALLERY
+  ===================================================== */
+
+  private async loadGallery() {
+
+  const GDRIVE_LIST_URL =
+    'https://script.google.com/macros/s/AKfycbytiV4Jt-inDTy9YmjhBgbeWZBc7yEs1gwNVXD-yunZ8MWGoD3ymZM7jBkOkw82Q-af/exec';
+
+  console.log("Fetching gallery API");
+
+  try {
+
+    const res = await fetch(GDRIVE_LIST_URL, {
+      cache: "no-store"
+    });
+
+    const json = await res.json();
+
+    const raw = json.images || [];
+
+    const normalized = raw.map((it: any) => {
+
+      const name =
+        it.name || (it.fileName || '').toString();
+
+      const url =
+        it.url || (it.imageUrl || it.fileUrl || '');
+
+      let category = it.category || '';
+
+      if (!category) {
+
+        const parts = name.split('__');
+
+        if (parts.length > 1 && parts[0].trim() !== '') {
+
+          category = parts[0].trim();
+
+        } else {
+
+          category = 'Uncategorized';
+
+        }
+
+      }
+
+      return {
+        name,
+        url,
+        category,
+        updated: it.updated || it.timestamp || null
+      };
+
+    });
+
+
+    const withDates =
+      normalized.filter((i: any) => i.updated);
+
+    if (withDates.length) {
+
+      normalized.sort((a: any, b: any) => {
+
+        const da =
+          new Date(a.updated || 0).getTime();
+
+        const db =
+          new Date(b.updated || 0).getTime();
+
+        return db - da;
+
+      });
+
+    }
+
+    this.galleryImages.set(normalized);
+
+  }
+  catch (err) {
+
+    console.error("Gallery load failed", err);
+
+  }
+
+}
+
+
+
+  /* =====================================================
      PRODUCTS
   ===================================================== */
 
   private async loadProducts(
-    serverVersion:number,
-    cache:any
-  ){
+    serverVersion: number,
+    cache: any
+  ) {
 
-    if(
+    if (
       cache.products &&
       cache.products.version === serverVersion
-    ){
+    ) {
 
       console.log("Products from cache");
 
@@ -120,10 +216,9 @@ export class Globalservice {
     console.log("Fetching products API");
 
 
-    const res:any =
+    const res: any =
       await firstValueFrom(
-        this.productsService
-          .getProducts()
+        this.productsService.getProducts()
       );
 
 
@@ -149,18 +244,18 @@ export class Globalservice {
 
 
   /* =====================================================
-     BLOGS
+     BLOG LIST
   ===================================================== */
 
   private async loadBlogs(
-    serverVersion:number,
-    cache:any
-  ){
+    serverVersion: number,
+    cache: any
+  ) {
 
-    if(
+    if (
       cache.blogs &&
       cache.blogs.version === serverVersion
-    ){
+    ) {
 
       console.log("Blogs from cache");
 
@@ -176,7 +271,7 @@ export class Globalservice {
     console.log("Fetching blogs API");
 
 
-    const res:any =
+    const res: any =
       await this.blogsService.getBlogs();
 
 
@@ -202,18 +297,83 @@ export class Globalservice {
 
 
   /* =====================================================
+     BLOG DETAILS (NEW)
+  ===================================================== */
+
+  private async loadBlogDetails(
+    serverVersion: number,
+    cache: any
+  ) {
+
+    if (
+      cache.blogDetails &&
+      cache.blogDetails.version === serverVersion
+    ) {
+
+      console.log("Blog details from cache");
+
+      this.blogDetails.set(
+        cache.blogDetails.data
+      );
+
+      return;
+
+    }
+
+
+    console.log("Fetching blog details API");
+
+
+    const blogs =
+      this.blogs();
+
+
+    const requests =
+      blogs.map(blog =>
+        this.blogsService.getBlogDetail(
+          blog.slug
+        )
+      );
+
+
+    const results =
+      await Promise.all(requests);
+
+
+    const data =
+      results.map((r: any) => r);
+
+
+    this.blogDetails.set(data);
+
+
+    cache.blogDetails = {
+
+      version: serverVersion,
+      data: data
+
+    };
+
+
+    this.saveCache(cache);
+
+  }
+
+
+
+  /* =====================================================
      JOBS
   ===================================================== */
 
   private async loadJobs(
-    serverVersion:number,
-    cache:any
-  ){
+    serverVersion: number,
+    cache: any
+  ) {
 
-    if(
+    if (
       cache.jobs &&
       cache.jobs.version === serverVersion
-    ){
+    ) {
 
       console.log("Jobs from cache");
 
@@ -229,13 +389,13 @@ export class Globalservice {
     console.log("Fetching jobs API");
 
 
-    const res:any =
+    const res: any =
       await firstValueFrom(
         this.jobsService.getActiveJobs()
       );
 
 
-    const data = res ;
+    const data = res;
 
 
     this.jobs.set(data);
@@ -259,7 +419,7 @@ export class Globalservice {
      CACHE HELPERS
   ===================================================== */
 
-  private getCache():any {
+  private getCache(): any {
 
     const raw =
       localStorage.getItem(
@@ -274,7 +434,7 @@ export class Globalservice {
 
 
 
-  private saveCache(cache:any){
+  private saveCache(cache: any) {
 
     localStorage.setItem(
 

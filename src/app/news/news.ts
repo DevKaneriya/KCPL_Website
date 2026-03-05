@@ -10,7 +10,7 @@ import {
 import { CommonModule } from '@angular/common';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { Blogservice } from '../../services/blogservice';
+import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { ActivatedRoute } from '@angular/router';
 import { Globalservice } from '../../services/globalservice';
@@ -31,7 +31,7 @@ export class News {
   @ViewChild('animateTarget', { static: true }) animateTarget!: ElementRef;
 
   goToBlog(slug: string) {
-    window.location.href = '/blogs/' + slug;
+    this.router.navigate(['/blogs', slug]);
   }
 
   blogs: any[] = [];
@@ -40,9 +40,10 @@ export class News {
   constructor(
     private cdr: ChangeDetectorRef,
     private route: ActivatedRoute,
-    public appData: Globalservice
+    public appData: Globalservice,
+    private router: Router,
   ) {
-    
+
 
     effect(() => {
       const currentSlug =
