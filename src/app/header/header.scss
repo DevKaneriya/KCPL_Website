@@ -45,7 +45,32 @@
   text-decoration: none;
   font-weight: 500;
 }
+.desktop {
+  position: relative;
+  padding-bottom: 4px; // space for underline
 
+  // hover underline effect
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 2.5px;
+    width: 0;
+    border-radius: 40px;
+    background-color: currentColor;
+    transition: width 0.5s ease;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
+
+  // remove hover underline if active
+  &.active-link:hover::after {
+    width: 100%;
+  }
+}
 // active link underline
 .nav a.active-link {
   font-weight: 500;
@@ -257,7 +282,7 @@ hr {
   flex-direction: column;
   align-items: left;
   justify-content: center;
-  padding: 110px 30px;
+  padding: 120px 30px;
 }
 
 .mobile-menu nav a {
@@ -319,7 +344,7 @@ hr {
   }
 
   .dropdown-item {
-    font-size: 12px !important;
+    font-size: 18px !important;
     width: 100%;
     padding: 4px 12px !important;
     margin: 0;
