@@ -29,6 +29,13 @@
         {{ blog.title }}
     </div>
 
+    <div class="meta" *ngIf="blog?.author || blog?.published_date || blog?.createdAt">
+        <span class="author" *ngIf="blog?.author">Written By {{ blog.author }}</span>
+        <span class="separator" *ngIf="blog?.author && (blog?.published_date || blog?.createdAt)"> on </span>
+        <span class="date" *ngIf="blog?.published_date">
+            {{ blog.published_date | date:'yyyy-MM-dd' }}
+        </span>
+    </div>
 
     <div class="image" *ngIf="blog.cover_image">
         <img [src]="blog.cover_image" alt="">
@@ -44,9 +51,7 @@
                 {{ s.title }}
             </div>
 
-
             <div class="content">
-
 
                 <p *ngIf="s.type === 'text'">
                     {{ s.content }}

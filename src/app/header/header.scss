@@ -168,12 +168,15 @@ hr {
 
 .dropdown-content.open {
   max-height: 500px;
-  padding-left: 0px;
+  background: #02102514;
+  padding: 10px;
+  border-radius: 10px;
+  padding-left: 15px;
 }
 
 .dropdown-content a {
   padding: 15px 0 !important;
-  font-size: 20px !important;
+  font-size: 18px !important;
   text-decoration: none;
   color: black;
 }
