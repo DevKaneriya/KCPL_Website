@@ -5,11 +5,11 @@ import { ReachOut } from "../reach-out/reach-out";
 import { Footer } from "../footer/footer";
 import { News } from "../news/news";
 import { Globalservice } from '../../services/globalservice';
-
+import { Blog } from '../blog/blog';
 
 @Component({
   selector: 'app-blog-detail-page',
-  imports: [CommonModule, RouterModule, ReachOut, Footer, News],
+  imports: [CommonModule, RouterModule, ReachOut, Footer, News,Blog],
   templateUrl: './blog-detail-page.html',
   styleUrl: './blog-detail-page.scss'
 })
@@ -65,11 +65,14 @@ export class BlogDetailPage {
       const blog =
         blogs.find(b => b.slug === slug);
 
+      const summaryBlog =
+        this.global.blogs().find(b => b.slug === slug);
+
       if (!blog) {
         this.error = true;
         this.blog = null;
       } else {
-        this.blog = blog;
+        this.blog = { ...summaryBlog, ...blog };
       }
 
       this.loading = false;
