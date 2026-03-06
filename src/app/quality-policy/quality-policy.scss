@@ -80,17 +80,17 @@
   width: 500px;
 }
 
-/* container */
+/* container
 
 .gates-content {
   flex: 1;
   display: flex;
-  overflow: hidden;
+  overflow: hidden; 
   position: relative;
   width: 300px;
 }
 
-/* track */
+/* track  
 
 .gates-track {
   display: flex;
@@ -99,7 +99,7 @@
   animation: gatesScroll 6s linear infinite;
 }
 
-/* pills */
+/* pills  
 
 .gate-pill {
   padding: 14px 26px;
@@ -109,9 +109,9 @@
   font-weight: var(--content-weight);
 
   /* allow 2 line text */
-  white-space: normal;
-  text-align: center;
-}
+//   white-space: normal;
+//   text-align: center;
+// }
 
 /* animation */
 
@@ -124,12 +124,60 @@
   }
 }
 
-/* pause on hover */
+/* pause on hover 
 
 .gates-content:hover .gates-track {
   animation-play-state: paused;
 }
 /* DESCRIPTION TEXT */
+/* container */
+
+.gates-content {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* moving track */
+
+.gates-track {
+  display: inline-flex;
+  align-items: center;
+  gap: 25px;
+  white-space: nowrap;
+  width: max-content;
+  animation: marquee 27s linear infinite;
+}
+
+/* pills */
+
+.gates-track span {
+  display: inline-block;
+  padding: 12px 26px;
+  background: #ffffff;
+  border-radius: 40px;
+  font-size: var(--content);
+  font-weight: var(--content-weight);
+  color: #000;
+}
+
+/* animation */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* pause on hover */
+
+.gates-content:hover .gates-track {
+  animation-play-state: paused;
+}
 
 .gates-desc {
   font-size: var(--content);
@@ -162,14 +210,6 @@
   .quality-card h4 {
     font-size: 20px;
   }
-  .gates-pill {
-    flex-direction: row;
-    border-radius: 40px;
-  }
-
-  .gates-pill span {
-    max-width: 180px;
-  }
 }
 
 @media screen and (max-width: 576px) {
@@ -191,22 +231,25 @@
     text-align: center;
   }
 
-  .gate-pill {
-    flex-direction: row;
-    align-items: center;
-    gap: 14px;
-    padding: 20px;
-    border-radius: 12px;
-    width: 300px;
-    max-width: 100% !important;
+  .gates-content {
+    width: 100%;
+    overflow: hidden;
   }
 
   .gates-track {
-    width: 300px;
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    white-space: nowrap;
+    animation: marquee 27s linear infinite;
   }
-  .gates-track {
-    animation: gatesScroll 11s linear infinite;
+
+  .gates-track span {
+    padding: 10px 18px;
+    font-size: 14px;
+    border-radius: 30px;
   }
+
   .section {
     flex-direction: column-reverse;
     width: 100%;
