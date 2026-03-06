@@ -31,11 +31,11 @@ export class Application {
     {
       name: 'Mining and Construction',
       image: '/assets/images/Home/mining.png',
-      content: 'Rugged Thermal Solutions Designed For Mining And Construction Equipment Operating In The Hardest Conditions.'
+      content: 'Rugged thermal solutions designed for mining and construction equipment operating in the harshest conditions.'
     },
     {
       name: 'Equipments',
-      image: '/assets/images/Home/mining.png',
+      image: '/assets/images/Home/equipment.png',
       content: 'Rugged thermal solutions designed for mining and construction equipment operating in the harshest conditions.'
     },
     {

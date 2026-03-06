@@ -5,11 +5,10 @@ import { ReachOut } from "../reach-out/reach-out";
 import { Footer } from "../footer/footer";
 import { News } from "../news/news";
 import { Globalservice } from '../../services/globalservice';
-import { Blog } from '../blog/blog';
 
 @Component({
   selector: 'app-blog-detail-page',
-  imports: [CommonModule, RouterModule, ReachOut, Footer, News,Blog],
+  imports: [CommonModule, RouterModule, ReachOut, Footer, News],
   templateUrl: './blog-detail-page.html',
   styleUrl: './blog-detail-page.scss'
 })

@@ -182,7 +182,7 @@
     }
 
     .card img {
-        height: 195px;
+        height: 215px !important;
         width: 100%;
     }
 
@@ -193,6 +193,11 @@
 
     .card-head {
         font-size: 17px !important;
+    }
+
+    .card-author {
+        font-size: 13px;
+        font-weight: var(--content-weight);
     }
 
     .card-content {
