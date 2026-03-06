@@ -5,8 +5,8 @@
       ? 'assets/images/Home/logo-white.png'
       : 'assets/images/Home/logo.png'" alt="Logo" />
   </a>
-
-
+ 
+ 
   <!-- Mobile Menu Icon -->
   <button class="menu-btn" (click)="toggleMenu()"
     [ngClass]="{ 'white-icon': isTransparent && !isMenuOpen, 'black-icon': !isTransparent || isMenuOpen, 'open': isMenuOpen }">
@@ -14,12 +14,12 @@
     <span></span>
     <span></span>
   </button>
-
+ 
   <!-- Desktop Nav -->
   <ul class="nav">
     <li><a class="desktop" routerLink="/about" routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }">About</a></li>
-
+ 
     <div class="btn-group">
       <a type="button" class="dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false"
         (click)="toggleIndustrialDropdown(); $event.preventDefault()">
@@ -46,40 +46,41 @@
         </li>
       </ul>
     </div>
-
+ 
     <li><a class="desktop" routerLink="/products" routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }">Products</a></li>
-
+ 
     <li><a class="desktop" routerLink="/career" routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }">Career</a>
     </li>
-
+ 
     <li><a class="desktop" routerLink="/contact" routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }">Contact Us</a>
     </li>
-
+ 
     <li><a class="desktop" routerLink="/gallery" routerLinkActive="active-link"
         [routerLinkActiveOptions]="{ exact: true }">Gallery</a>
     </li>
   </ul>
 </div>
-
+ 
 <!-- Mobile Menu -->
 <div class="mobile-menu" [ngClass]="{ 'open': isMenuOpen }">
   <nav>
     <a routerLink="/about" [ngClass]="{ 'active': router.url.includes('/about') }" (click)="closeMenu()">About</a>
-
+ 
     <div class="nav-item dropdown-toggle-wrapper btn-group"
       (click)="toggleIndustrialDropdown(); $event.preventDefault()">
       <a class="nav-link">Industrial</a>
-      <svg width="35px" height="35px" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg class="dropdown-image" [ngClass]="{ 'rotate': isIndustrialOpen }" width="35px" height="35px"
+        viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <g>
           <path d="M7 10L12 15L17 10" stroke="#000000" stroke-width="1.5" stroke-linecap="round"
             stroke-linejoin="round"></path>
         </g>
       </svg>
     </div>
-
+ 
     <div class="dropdown-content" [ngClass]="{ 'open': isIndustrialOpen }">
       <a routerLink="/industrial/quality-control" class="nav-link"
         [ngClass]="{ 'active': router.url.includes('/industrial/quality-control') }" (click)="closeMenu()">
@@ -94,15 +95,15 @@
         Manufacturing
       </a>
     </div>
-
-
+ 
+ 
     <a routerLink="/products" [ngClass]="{ 'active': router.url.includes('/products') }"
       (click)="closeMenu()">Products</a>
     <a routerLink="/career" [ngClass]="{ 'active': router.url.includes('/career') }" (click)="closeMenu()">Career</a>
     <a routerLink="/contact" [ngClass]="{ 'active': router.url.includes('/contact') }" (click)="closeMenu()">Contact
       Us</a>
     <a routerLink="/gallery" [ngClass]="{ 'active': router.url.includes('/gallery') }" (click)="closeMenu()">Gallery</a>
-
-
+ 
+ 
   </nav>
 </div>
