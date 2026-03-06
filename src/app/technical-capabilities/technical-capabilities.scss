@@ -88,11 +88,9 @@
 }
 
 .bullet-fin ul {
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(3, auto);
-    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     padding-left: 18px;
     margin-bottom: 0px;
 }
@@ -104,11 +102,9 @@
 }
 
 .bullet-tube ul {
-    display: grid;
-    grid-template-columns: 0.8fr 1fr;
-    grid-auto-flow: column;
-    grid-template-rows: repeat(2, auto);
-    row-gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
     padding-left: 16px;
     margin-bottom: 0px;
 }

@@ -152,6 +152,12 @@ body {
   border-bottom: none;
 }
 
+.form-control::placeholder {
+  color: #000;        /* placeholder color */
+  font-weight: 400;   /* placeholder weight */
+  opacity: 1;         /* removes default faded look */
+}
+
 .success-message {
   position: fixed;
   top: 50px;

@@ -75,7 +75,7 @@
 /* Mobile */
 @media screen and (max-width: 576px) {
   .main {
-    height: 100vh;
+    height: 80vh;
   }
 
   .content {
@@ -87,7 +87,7 @@
   }
 
   .button {
-    padding: 5px 16px;
+    padding: 10px 16px;
     margin-top: 12px;
     border-radius: 50px;
     font-weight: var(--button-weight);
