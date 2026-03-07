@@ -1,27 +1,35 @@
 .flex {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     background-color: rgba(245, 245, 245, 1);
     padding: var(--padding);
     gap: 40px;
 }
 
+.left {
+    width: 50%;
+}
+
+.right {
+    width: 50%;
+}
+
 .left-header {
     font-size: var(--header);
     font-weight: var(--header-weight);
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .grey {
-  color: grey;
+    color: grey;
 }
 
 .black {
-  color: black;
+    color: black;
 }
 
 .blue {
-color: var(--blue);
+    color: var(--blue);
 }
 
 
@@ -30,7 +38,7 @@ color: var(--blue);
     font-size: var(--content);
     font-weight: var(--content-weight);
     padding: 20px 0;
-    max-width: 400px;
+    max-width: 500px;
 }
 
 .content {
@@ -72,6 +80,15 @@ color: var(--blue);
 
 
 @media screen and (max-width: 576px) {
+
+
+    .left {
+        width: 100%;
+    }
+
+    .right {
+        width: 100%;
+    }
 
     .flex {
         display: flex;
@@ -125,7 +142,7 @@ color: var(--blue);
     }
 
     .item-link a:hover {
-       color: var(--blue);
+        color: var(--blue);
     }
 
 }

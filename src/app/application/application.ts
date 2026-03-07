@@ -36,7 +36,7 @@ export class Application {
     {
       name: 'Equipments',
       image: '/assets/images/Home/equipment.png',
-      content: 'Rugged thermal solutions designed for mining and construction equipment operating in the harshest conditions.'
+      content: 'Radiators help regulate temperature in heavy equipment by efficiently dissipating excess heat generated during operation.'
     },
     {
       name: 'Tractor and Agriculture Series',
