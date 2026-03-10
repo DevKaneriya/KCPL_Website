@@ -11,7 +11,7 @@
 }
 
 .video-box {
-    height: 295px;
+    height: 310px;
     width: 748px;
 }
 
@@ -28,7 +28,7 @@
 
 
 .text-box {
-    padding: 30px;
+    padding: 25px 30px;
     background-color: rgba(245, 245, 245, 1);
     width: 354px;
     min-height: 249px;
@@ -38,9 +38,10 @@
     gap: 20px;
 }
 
-.text-box h2 {
-    font-size: 19px;
+.header {
+    font-size: var(--sub-header);
     font-weight: var(--sub-header-weight);
+    text-transform: uppercase;
 }
 
 .para{
@@ -50,7 +51,7 @@
 }
 
 .text-box .para {
-    font-size: 15px;
+    font-size: 14.5px;
     font-weight: var(--content-weight);
 }
 
@@ -125,9 +126,7 @@
         gap: 16px;
     }
 
-    .text-box h2 {
-        font-size: var(--sub-header);
-        font-weight: var(--sub-header-weight);
+    .header {
         width: 100%;
     }
 

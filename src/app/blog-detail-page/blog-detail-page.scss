@@ -158,6 +158,7 @@
   }
 
   .image {
+    min-height: 200px;
     img {
       width: 100%;
     }
@@ -187,7 +188,7 @@
 
   .skeleton-image {
     width: 100%;
-    height: 280px;
+    height: 200px;
     border-radius: 12px;
     overflow: hidden;
     align-items: center;

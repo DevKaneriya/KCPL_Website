@@ -34,6 +34,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 40px;
 }
 
 .image {
@@ -247,6 +248,7 @@ button svg {
         gap: 5px;
         align-items: center;
         padding: 6px 12px !important;
+        color: black;
     }
 
     button svg {

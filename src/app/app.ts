@@ -72,8 +72,6 @@ export class App {
   ngAfterViewInit(): void {
     this.zone.runOutsideAngular(() => {
 
-      gsap.registerPlugin(ScrollTrigger);
-
       this.lenis = new Lenis({
         // lerp: this.isMobile() ? 1 : 0.06,
         // smoothWheel: true,
