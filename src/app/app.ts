@@ -86,7 +86,7 @@ export class App {
         lerp: 0.1,
         smoothWheel: true,
         wheelMultiplier: 1,
-        touchMultiplier: 2,
+        touchMultiplier: 1,
         syncTouch: true,
       });
 

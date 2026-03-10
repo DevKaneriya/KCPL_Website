@@ -24,12 +24,13 @@ export class Founder {
 
   @ViewChild('revealH1', { static: true }) revealH1!: ElementRef<HTMLHeadingElement>;
 
-
+  @ViewChild('mobileVideo') mobileVideo!: ElementRef<HTMLVideoElement>;
+  @ViewChild('desktopVideo') desktopVideo!: ElementRef<HTMLVideoElement>;
 
 
   constructor(private cdr: ChangeDetectorRef) { }
-  
-  
+
+
 
   ngOnInit(): void {
     const blackText = 'What Drives Us';
@@ -44,12 +45,27 @@ export class Founder {
     this.letters = [...mapWords(blackText, false), ...mapWords(blueText, true)];
 
 
-    
+
 
 
   }
 
   ngAfterViewInit(): void {
+
+
+    [this.mobileVideo, this.desktopVideo].forEach(v => {
+      const video = v?.nativeElement;
+      if (!video) return;
+
+      video.muted = true;
+      video.play().catch(() => {
+        video.muted = true;
+        video.play();
+      });
+    });
+
+
+
 
     //Text reveal animation
 
@@ -81,14 +97,14 @@ export class Founder {
       );
     }, 0);
 
-    
+
 
   }
-  
 
- 
-    
-  
-    
-  }  
+
+
+
+
+
+}
 

@@ -108,7 +108,7 @@ export class Globalservice {
   const GDRIVE_LIST_URL =
     'https://script.google.com/macros/s/AKfycbytiV4Jt-inDTy9YmjhBgbeWZBc7yEs1gwNVXD-yunZ8MWGoD3ymZM7jBkOkw82Q-af/exec';
 
-  console.log("Fetching gallery API");
+
 
   try {
 
@@ -202,8 +202,6 @@ export class Globalservice {
       cache.products.version === serverVersion
     ) {
 
-      console.log("Products from cache");
-
       this.products.set(
         cache.products.data
       );
@@ -213,7 +211,6 @@ export class Globalservice {
     }
 
 
-    console.log("Fetching products API");
 
 
     const res: any =
@@ -257,8 +254,6 @@ export class Globalservice {
       cache.blogs.version === serverVersion
     ) {
 
-      console.log("Blogs from cache");
-
       this.blogs.set(
         cache.blogs.data
       );
@@ -268,7 +263,7 @@ export class Globalservice {
     }
 
 
-    console.log("Fetching blogs API");
+
 
 
     const res: any =
@@ -310,8 +305,6 @@ export class Globalservice {
       cache.blogDetails.version === serverVersion
     ) {
 
-      console.log("Blog details from cache");
-
       this.blogDetails.set(
         cache.blogDetails.data
       );
@@ -321,7 +314,7 @@ export class Globalservice {
     }
 
 
-    console.log("Fetching blog details API");
+
 
 
     const blogs =
@@ -375,8 +368,6 @@ export class Globalservice {
       cache.jobs.version === serverVersion
     ) {
 
-      console.log("Jobs from cache");
-
       this.jobs.set(
         cache.jobs.data
       );
@@ -386,7 +377,6 @@ export class Globalservice {
     }
 
 
-    console.log("Fetching jobs API");
 
 
     const res: any =
