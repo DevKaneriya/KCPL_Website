@@ -23,27 +23,26 @@ import { QualityMission } from "../quality-mission/quality-mission";
   templateUrl: './about.html',
   styleUrl: './about.scss'
 })
-export class About {
+export class About implements AfterViewInit {
 
-  @ViewChild('animateTarget', { static: true }) animateTarget!: ElementRef;
-
-
+  @ViewChild('animateTarget', { static: false }) animateTarget?: ElementRef;
 
   ngAfterViewInit(): void {
-    gsap.from(this.animateTarget.nativeElement, {
-      opacity: 0.9,
-      scale: 1.5,
-      duration: 4,
-      ease: 'power2.out',
-      scrollTrigger: {
-        trigger: this.animateTarget.nativeElement,
-        start: 'top 90%',      // when top of element hits 80% of viewport
-        end: 'bottom 100%',    // when bottom of element hits bottom of viewport
-        once: true,            // animate only once per page load
-        toggleActions: 'play none none none'
-      }
-    });
-
+    if (this.animateTarget?.nativeElement) {
+      gsap.from(this.animateTarget.nativeElement, {
+        opacity: 0.9,
+        scale: 1.5,
+        duration: 4,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: this.animateTarget.nativeElement,
+          start: 'top 90%',      // when top of element hits 80% of viewport
+          end: 'bottom 100%',    // when bottom of element hits bottom of viewport
+          once: true,            // animate only once per page load
+          toggleActions: 'play none none none'
+        }
+      });
+    }
   }
 
 }
