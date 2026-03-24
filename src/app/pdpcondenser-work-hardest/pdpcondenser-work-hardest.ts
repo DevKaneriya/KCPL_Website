@@ -33,7 +33,7 @@ export class PdpcondenserWorkHardest {
 
   ngOnInit(): void {
     const blackText = 'Where Our';
-    const blueText = 'Condensers Work Hardest';
+    const blueText = 'Condensers Perform Best';
     const reblackText = '';
 
 

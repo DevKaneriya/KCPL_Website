@@ -43,11 +43,16 @@ export class RadiatorCarousel {
         return;
 
       /* filter radiator category */
+      const filtered = allProducts.filter(
+        (p: ProductItem) =>
+          p.category === 'radiator'
+      );
+
+      /* duplicate if <= 3 */
       this.radiatorProducts =
-        allProducts.filter(
-          (p: ProductItem) =>
-            p.category === 'radiator'
-        );
+        filtered.length <= 3
+          ? [...filtered, ...filtered]
+          : filtered;
 
       this.loading = false;
 
